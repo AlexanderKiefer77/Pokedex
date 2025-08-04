@@ -1,0 +1,52 @@
+
+/* ####################################### */
+/* this classes are only used in Impressum */
+
+.h1Impressum, .h2Impressum {
+    color: darkblue;
+}
+
+
+.contentWidthImpressum {
+    box-sizing: border-box;
+    max-width: var(--maxWidth);
+    width: 100%;
+    margin: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.impressum {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.headerImpressum {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: var(--backgroundColorHeaderFooter);
+    border-bottom: solid;
+    border-color: var(--borderColorHeaderFooter);
+}
+
+.headerImpressum img {
+    height: 80px;
+    padding-left: 24px;
+}
+
+.footerImpressum {
+    height: 100px;
+    background-color: var(--backgroundColorHeaderFooter);
+    display: flex;
+    align-items: center;
+    border-top: solid;
+    border-color: var(--borderColorHeaderFooter);
+}
+
+.footerImpressum img {
+    height: 80px;
+    padding-left: 24px;
+}

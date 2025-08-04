@@ -1,0 +1,65 @@
+/* ######################################################## */
+.header {
+    height: 100px;
+    background-color: var(--backgroundColorHeaderFooter);
+    display: flex;
+    border-bottom: solid;
+    border-color: var(--borderColorHeaderFooter);
+}
+
+.header img {
+    height: 60px;
+}
+
+.innerHeader {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 24px;
+    color: white;
+    font-size: 40px;
+}
+
+/* ######################################################## */
+.main {
+    /* entire width area without header footer */
+    background-color: var(--backgroundColorAOT);
+}
+
+.content {
+    /* area without header foooter */
+    width: calc(100%-300px);
+    min-height: calc(100vh - 200px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+
+
+/* ######################################################## */
+.footer {
+    height: 100px;
+    background-color: var(--backgroundColorHeaderFooter);
+    display: flex;
+    align-items: center;
+    border-top: solid;
+    border-color: var(--borderColorHeaderFooter);
+}
+
+.footer img {
+    height: 60px;
+}
+
+.innerFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-left: 24px;
+    color: white;
+    font-size: 40px;
+}
+
+
