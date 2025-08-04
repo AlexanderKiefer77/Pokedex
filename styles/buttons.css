@@ -1,0 +1,55 @@
+
+.orderButton {
+    background-color: #FF8000;
+    margin-top: 24px;
+    padding: 6px;
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.orderButton:hover {    
+    background-color: greenyellow;
+    color: darkblue;
+}
+
+.navButton {
+    height: 50px;
+    cursor: pointer;
+}
+
+.navMenueButton {
+    width: 120px;
+    height: 32px;
+    border: 2px solid black;
+    border-radius: 6px;  
+    cursor: pointer;
+    padding: 4px;
+    font-weight: bold;    
+    background-color: whitesmoke;
+}
+
+.navMenueButton:hover {
+    background-color: greenyellow;
+}
+
+.overlayCloseButton {
+    background-color: whitesmoke;
+    padding: 6px;
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.overlayCloseButton:hover {
+    background-color: greenyellow;
+    color: darkblue;
+}
+
+.arrowUpButton {
+    height: 40px;
+}

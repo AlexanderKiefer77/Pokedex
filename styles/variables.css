@@ -1,0 +1,19 @@
+
+:root {
+    /* Variable for max. Content width  */
+    --maxWidth: 1440px;
+
+    /* Variables for colors */    
+    --backgroundColorHeaderFooter: #082029;
+    --backgroundColorAOT: #05171E;
+    --borderColorHeaderFooter: rgba(114, 87, 87, 0.477);
+    --backgroundColorOverlayBackground: whitesmoke;
+    --backgroundColorOverlav: #FF8000;
+
+    /* Cards */
+    --backgroundColorHeaderFooterCards: #1d4858;
+    --backgroundColorImageCardsGreen: #b3f84c;
+    --backgroundColorImageCardsBlue: #4cd6f8;
+    --backgroundColorImageCardsRed: #e14c38;
+}
+
