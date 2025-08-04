@@ -1,9 +1,6 @@
 
 // adresse von pokemon API 
-const BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0";
-//const BASE_URL = "https://pokeapi.co/api/v2/pokemon/1";
-//                  https://pokeapi.co/api/v2/pokemon/1
-
+const BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=24&offset=0";
 
 function init() {
     fetchDataJson();
@@ -43,20 +40,12 @@ let names = [];
 let responseAsJson = [];
 
 async function fetchDataJson(path = "") {
-    let response = await fetch(BASE_URL + path + ".json");
-    
-    //return responseAsJson = await response.json();
-    //console.log(response);
-    
+    let response = await fetch(BASE_URL + path + ".json");        
     responseAsJson = await response.json();
-    //console.log(responseAsJson);
  
-    for (let i = 0; i < responseAsJson.results.length; i++) {
-       // console.log(responseAsJson);
-        
+    for (let i = 0; i < responseAsJson.results.length; i++) {        
         let element = await fetch(url=responseAsJson.results[i].url);
         let element2 = await element.json();
-
         names.push(element2);
         render(i); 
     }
@@ -140,13 +129,6 @@ function render(i) {
 // document.getElementById('Stat 5').innerHTML = no2.stats[4].base_stat;
 // document.getElementById('Stat-Name 6').innerHTML = no2.stats[5].stat.name + " :";
 // document.getElementById('Stat 6').innerHTML = no2.stats[5].base_stat;
-
-
-
-
-
-
-
 
 
     //let responseAsJsonKeys = Object.keys(responseAsJson);
