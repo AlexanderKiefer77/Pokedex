@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="icon" href="./img/pokemon-favicon.png" sizes="any" type="image/svg+xml">
+
+    <link rel="stylesheet" href="./styles/standart.css">
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/buttons.css">
+    <link rel="stylesheet" href="./styles/overlay.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styles/cards.css">
+    <link rel="stylesheet" href="./styles/cardsViewMain.css">
+    <link rel="stylesheet" href="./styles/mediaQueries.css">
+    <link rel="stylesheet" href="./styles/typesIcons.css">
+
+    <script src="./scripts/template.js"></script>
+    <script src="./scripts/overlay.js" defer></script>
+
+
+</head>
+
+<body onload="init()">
+    <header class="header">
+        <div class="contentWidth">
+            <section class="innerHeader">
+                <img src="./img/pokemon.png" alt="Pokemon Logo">
+                Pokedex
+            </section>
+        </div>
+    </header>
+
+    <div id="overlay"></div>
+
+    <main id="aot" class="main"> <!-- entire width area without header footer -->
+        <div class="contentWidth">
+            <section class="content"> <!-- area without header foooter -->
+
+                <!-- Menü Karten-->
+                <div class="card">
+                    <header class="cardHeader">
+                        <div id="pkmID"></div>
+                        <div id="pkmName"></div>
+                    </header>
+                    <div class="cardImage">
+                        <img id="pkmImage" class="pkmImage" src="" alt="Pokemon Image">
+                    </div>
+                    <footer class="cardFooter">
+                        <div class="typesIconsBG typesIconsBgColorGrass">
+                            <img src="./typesIcons/grass.svg" alt="Icon type grass">
+                        </div>
+                        <div class="typesIconsBG typesIconsBgColorPoison">
+                            <img src="./typesIcons/poison.svg" alt="Icon type poison">
+                        </div>
+                    </footer>
+                </div>
+
+
+                <!-- ausgewählte Karten View Main -->
+                <div class="card2">
+                    <header class="cardHeader2">
+                        <div id="pkmID2"></div>
+                        <div id="pkmName2"></div>
+                        <img src="./img/close.svg" alt="X"> <!-- close button -->
+                    </header>
+                    <div class="cardImage2">
+                        <img id="pkmImage2" class="pkmImage2" src="" alt="Pokemon Image">
+                    </div>
+                    <div class="cardIcon2">
+                        <div class="typesIconsBG typesIconsBgColorGrass">
+                            <img src="./typesIcons/grass.svg" alt="Icon type grass">
+                        </div>
+                        <div class="typesIconsBG typesIconsBgColorPoison">
+                            <img src="./typesIcons/poison.svg" alt="Icon type poison">
+                        </div>
+                    </div>
+                    <nav class="card2nav">
+                        <div class="navButtons">main</div>
+                        <div class="navButtons"><img src="./img/sound.svg" alt="Sound Icon"></div> <!-- Sound function einbauen -->
+                        <div class="navButtons">stats</div>
+                    </nav>
+                    <footer class="cardFooter2">
+                        <table>
+                            <tr>
+                                <td class="tableFirstRow">Height :</td>
+                                <td id="height"></td>
+                            </tr>
+                            <tr>
+                                <td class="tableFirstRow">Weight :</td>
+                                <td id="weight"></td>
+                            </tr>
+                            <tr>
+                                <td class="tableFirstRow">Base Experience :</td>
+                                <td id="baseExperience"></td>
+                            </tr>
+                            <tr>
+                                <td class="tableFirstRow">Abilities :</td>
+                                <td id="abilities"></td>
+                            </tr>
+                        </table>
+                    </footer>
+                </div>
+
+                <!-- ausgewählte Karten View Stats -->
+                <div class="card2">
+                    <header class="cardHeader2">
+                        <div id="pkmID3"></div>
+                        <div id="pkmName3"></div>
+                        <img src="./img/close.svg" alt="X"> <!-- close button -->
+                    </header>
+                    <div class="cardImage2">
+                        <img id="pkmImage3" class="pkmImage2" src="" alt="Pokemon Image">
+                    </div>
+                    <div class="cardIcon2">
+                        <div class="typesIconsBG typesIconsBgColorGrass">
+                            <img src="./typesIcons/grass.svg" alt="Icon type grass">
+                        </div>
+                        <div class="typesIconsBG typesIconsBgColorPoison">
+                            <img src="./typesIcons/poison.svg" alt="Icon type poison">
+                        </div>
+                    </div>
+                    <nav class="card2nav">
+                        <div class="navButtons">main</div>
+                        <div class="navButtons"><img src="./img/sound.svg" alt="Sound Icon"></div> <!-- Sound function einbauen -->
+                        <div class="navButtons">stats</div>
+                    </nav>
+                    <footer class="cardFooter2">
+                        <table>
+                            <tr>
+                                <td id="Stat-Name 1" class="tableFirstRow"></td>
+                                <td id="Stat 1"></td>
+                            </tr>
+                            <tr>
+                                <td id="Stat-Name 2" class="tableFirstRow"></td>
+                                <td id="Stat 2"></td>
+                            </tr>
+                            <tr>
+                                <td id="Stat-Name 3" class="tableFirstRow"></td>
+                                <td id="Stat 3"></td>
+                            </tr>
+                            <tr>
+                                <td id="Stat-Name 4" class="tableFirstRow"></td>
+                                <td id="Stat 4"></td>
+                            </tr>
+                             <tr>
+                                <td id="Stat-Name 5" class="tableFirstRow"></td>
+                                <td id="Stat 5"></td>
+                            </tr>
+                             <tr>
+                                <td id="Stat-Name 6" class="tableFirstRow"></td>
+                                <td id="Stat 6"></td>
+                            </tr>
+                        </table>
+                    </footer>
+                </div>
+
+
+                <ul id="content"></ul>
+
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="contentWidth">
+            <section class="innerFooter">
+                <img src="./img/pokemon.png" alt="Pokemon Logo">
+                Pokedex
+            </section>
+        </div>
+    </footer>
