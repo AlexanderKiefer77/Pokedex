@@ -1,56 +1,20 @@
 
-function dishesRendering(i) {
-    return `<section class="individualDishes">
-                <div>
-                    <h3 tabindex="0">${myDishes[i].name}</h3>
-                    <p>${myDishes[i].description}</p>
-                    <p class="fontColor">Preis :  ${myDishes[i].price.toFixed(2) + " €"}</p>
+function cardsRendering(index) {
+    return `<div class="card">
+                <header class="cardHeader">
+                    <div>${names[index].id}</div>
+                    <div>${names[index].name}</div>
+                </header>
+                <div class="cardImage">
+                    <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage">
                 </div>
-                <div>
-                <div>
-                    <img src="./assets/icons/add.svg" alt="add Icon" tabindex="0" aria-label="Zu Warenkorb hinzufügen" class="test" onclick="dishesAddToShoppingCart(${i})">
-                </svg>
-                </div>
-            </section>`
-}
-
-function supplementsRendering(j) {
-    return `<section class="individualDishes">
-                <div>
-                    <h3 tabindex="0">${mySupplements[j].name}</h3>
-                    <p>${mySupplements[j].description}</p>
-                    <p class="fontColor">Preis :  ${mySupplements[j].price.toFixed(2) + " €"}</p>
-                </div>
-                <div>
-                    <img src="./assets/icons/add.svg" alt="add Icon" tabindex="0" aria-label="Zu Warenkorb hinzufügen" onclick="supplementsAddToShoppingCart(${j})">
-                </div>
-            </section>`
-}
-
-function drinksRendering(k) {
-    return `<section class="individualDishes">
-                <div>
-                    <h3 tabindex="0">${myDrinks[k].name}</h3>
-                    <p>${myDrinks[k].description}</p>
-                    <p class="fontColor">Preis :  ${myDrinks[k].price.toFixed(2) + " €"}</p>
-                </div>
-                <div>
-                    <img src="./assets/icons/add.svg" alt="add Icon" tabindex="0" aria-label="Zu Warenkorb hinzufügen" onclick="drinksAddToShoppingCart(${k})">
-                </div>
-            </section>`
-}
-
-function shoppingCartRendering(j) {
-    return `<section class="orderedMeal">
-                <p class="mealNameShoppingCart">${myShoppingCart[j].name}</h>
-                <div class="quantities">
-                    <div class="quantitiesPlusMinus">
-                        <img src="./assets/icons/remove.svg" alt="Button Anzahl reduzieren" tabindex="0" aria-label="Menge reduziern" onclick="reduceNumber(${j})">
-                        <p class="numberOfMeal">${myShoppingCart[j].startnumber + "x"}</p>
-                        <img src="./assets/icons/add.svg" alt="Button Anzahl erhöhen" tabindex="0" aria-label="Menge erhöhen" onclick="increaseNumber(${j})">
+                <footer class="cardFooter">
+                    <div class="typesIconsBG typesIconsBgColorGrass">
+                        <img src="./typesIcons/grass.svg" alt="Icon type grass">
                     </div>
-                    <p class="sumPricePerMeal">${myShoppingCart[j].newprice.toFixed(2) + " €"}</p>
-                    <img src="./assets/icons/delete.svg" alt="Aus Warenkorb entfernen" tabindex="0" aria-label="Aus Warenkorb entfernen" onclick="removeFromShoppingCart(${j})">
-                </div>
-            </section>`
+                    <div class="typesIconsBG typesIconsBgColorPoison">
+                        <img src="./typesIcons/poison.svg" alt="Icon type poison">
+                    </div>
+                </footer>
+            </div>`
 }
