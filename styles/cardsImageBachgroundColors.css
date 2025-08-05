@@ -1,0 +1,73 @@
+
+/* colors for background cards image */
+.bug {
+    background-color: chartreuse;
+}
+
+.dark {
+    background-color: darkslategray;
+}
+
+.dragon {
+    background-color: rgb(5, 115, 218);
+}
+
+.electric {
+    background-color: rgb(251, 251, 63);
+}
+
+.fairy {
+    background-color: hotpink;
+}
+
+.grass {
+    background-color: green;
+}
+
+.fighting {
+    background-color: crimson;
+}
+
+.fire {
+    background-color: goldenrod;
+}
+
+.flying {
+    background-color: lightsteelblue;
+}
+
+.ghost {
+    background-color: steelblue;
+}
+
+.ground {
+    background-color: rgb(247, 97, 43);
+}
+
+.ice {
+    background-color: mediumaquamarine;
+}
+
+.normal {
+    background-color: dimgray;
+}
+
+.poison {
+    background-color: darkorchid;
+}
+
+.psychic {
+    background-color: rgb(252, 110, 110);
+}
+
+.rock {
+    background-color: rgb(252, 221, 97);
+}
+
+.steel {
+    background-color: cadetblue;
+}
+
+.water {
+    background-color: rgb(51, 152, 253);
+}

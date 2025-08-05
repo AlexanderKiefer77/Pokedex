@@ -30,7 +30,6 @@
 }
 
 .cardImage2 {
-    background-color: var(--backgroundColorImageCardsGreen);
     width: 100%;
     height: 180px;
     display: flex;

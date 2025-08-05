@@ -5,7 +5,7 @@ function cardsRendering(index) {
                     <div>${names[index].id}</div>
                     <div>${names[index].name}</div>
                 </header>
-                <div class="cardImage">
+                <div class="cardImage ${names[index].types[0].type.name}">
                     <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage">
                 </div>
                 <footer class="cardFooter">
@@ -27,7 +27,7 @@ function overlayPictureRenderingMain(index) {
                         <div>${names[index].name}</div>
                         <img src="./img/close.svg" alt="X" onclick="closeOverlay()"> <!-- close button -->
                     </header>
-                    <div class="cardImage2">
+                    <div class="cardImage2 ${names[index].types[0].type.name}">
                         <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
                     </div>
                     <div class="cardIcon2">
@@ -74,7 +74,7 @@ function overlayPictureRenderingStats(index) {
                         <div>${names[index].name}</div>
                         <img src="./img/close.svg" alt="X" onclick="closeOverlay()"> <!-- close button -->
                     </header>
-                    <div class="cardImage2">
+                    <div class="cardImage2 ${names[index].types[0].type.name}">
                         <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
                     </div>
                     <div class="cardIcon2">
