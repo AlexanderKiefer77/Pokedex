@@ -1,6 +1,9 @@
 
+let offset = 0;
+let limit = 24;
+
 // adresse von pokemon API 
-const BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=24&offset=0";
+let BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit="+limit+"&offset="+offset;
 
 function init() {
     fetchDataJson();
@@ -58,6 +61,47 @@ function render(i) {
         cardsRef.innerHTML += cardsRendering(index);
     }
 }
+
+// for select start card and numbers of cards
+function startID() {
+    let inputStartID = document.getElementById('inputFieldStartID').value;
+    let inputFieldNumberCardsLoading = document.getElementById('inputFieldNumberCardsLoading').value;
+    if(inputStartID == "" || inputFieldNumberCardsLoading == "") {
+        return;        
+    } else if (inputStartID == 0) {              
+        selectionLoadingOne(inputStartID, inputFieldNumberCardsLoading);
+    } else if (inputStartID > 0) { 
+        selectionLoadingTwo(inputStartID, inputFieldNumberCardsLoading);
+    }
+}
+
+// if Start ID Input Fild = 0
+function selectionLoadingOne(inputStartID, inputFieldNumberCardsLoading) {
+        names = [];
+        offset = inputStartID;   
+        limit = inputFieldNumberCardsLoading;     
+        BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit="+limit+"&offset="+offset;             
+        init();
+        document.getElementById('inputFieldStartID').value = '';
+        document.getElementById('inputFieldNumberCardsLoading').value = '';
+}
+
+// if Start ID Input Fild > 0
+function selectionLoadingTwo(inputStartID, inputFieldNumberCardsLoading) {
+        names = [];   
+        offset = inputStartID-1;
+        limit = inputFieldNumberCardsLoading;
+        BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit="+limit+"&offset="+offset;   
+        init();
+        document.getElementById('inputFieldStartID').value = '';
+        document.getElementById('inputFieldNumberCardsLoading').value = '';
+}
+
+
+
+
+
+
 
 // let no1 = await fetch(url="https://pokeapi.co/api/v2/pokemon/1");
 // let no2 = await no1.json();

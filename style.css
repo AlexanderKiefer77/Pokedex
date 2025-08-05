@@ -8,17 +8,39 @@
     border-color: var(--borderColorHeaderFooter);
 }
 
-.header img {
+.headerIMG {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.headerImage {
     height: 60px;
 }
 
 .innerHeader {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
     padding-left: 24px;
     color: white;
     font-size: 40px;
+}
+
+.input {
+    color: black;
+    font-weight: bold;
+}
+
+.selectionFiled {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+label {
+    font-size: 16px;
 }
 
 
