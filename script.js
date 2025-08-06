@@ -70,6 +70,14 @@ function renderIconsSmallCards(index) {
     }
 }
 
+
+function renderIconsCardsMain(index) {
+        let iconsRef = document.getElementById(`iconFieldMain${index}`);
+        for (let j = 0; j < names[index].types.length; j++) {
+        iconsRef.innerHTML += iconsRenderingCardsMain(index, j);
+    }
+}
+
 // for select start card and numbers of cards
 function startID() {
     let inputStartID = document.getElementById('inputFieldStartID').value;

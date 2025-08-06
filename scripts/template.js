@@ -22,6 +22,11 @@ function iconsRenderingSmallCards(index, j) {
             </div>` 
 }
 
+function iconsRenderingCardsMain(index, j) {
+    return `<div class="typesIconsBG ${names[index].types[j].type.name}">
+                <img src="./typesIcons/${names[index].types[j].type.name}.svg" class="typesIconsIMG">
+            </div>` 
+}
 
 function overlayPictureRenderingMain(index) {
     overlayRef.innerHTML = `<div class="card2">
@@ -33,13 +38,7 @@ function overlayPictureRenderingMain(index) {
                     <div class="cardImage2 ${names[index].types[0].type.name}">
                         <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
                     </div>
-                    <div class="cardIcon2">
-                        <div class="typesIconsBG typesIconsBgColorGrass">
-                            <img src="./typesIcons/grass.svg" alt="Icon type grass">
-                        </div>
-                        <div class="typesIconsBG typesIconsBgColorPoison">
-                            <img src="./typesIcons/poison.svg" alt="Icon type poison">
-                        </div>
+                    <div id="iconFieldMain${index}" class="cardIcon2">                        
                     </div>
                     <nav class="card2nav">
                         <div class="navButtons">main</div>
@@ -81,15 +80,10 @@ function overlayPictureRenderingStats(index) {
                         <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
                     </div>
                     <div class="cardIcon2">
-                        <div class="typesIconsBG typesIconsBgColorGrass">
-                            <img src="./typesIcons/grass.svg" alt="Icon type grass">
-                        </div>
-                        <div class="typesIconsBG typesIconsBgColorPoison">
-                            <img src="./typesIcons/poison.svg" alt="Icon type poison">
-                        </div>
+                       
                     </div>
                     <nav class="card2nav">
-                        <div class="navButtons" onclick="overlayPictureRenderingMain(${index})">main</div>
+                        <div class="navButtons" onclick="overlayPictureRenderingMain(${index}), renderIconsCardsMain(${index})">main</div>
                        
                         <div class="navButtons">stats</div>
                     </nav>
