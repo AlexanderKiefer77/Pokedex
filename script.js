@@ -59,6 +59,14 @@ function render(i) {
     cardsRef.innerHTML = '';
     for (let index = 0; index < names.length; index++) {        
         cardsRef.innerHTML += cardsRendering(index);
+        renderIconsSmallCards(index);
+    }
+}
+
+function renderIconsSmallCards(index) {
+        let iconsRef = document.getElementById(`iconField${index}`);
+        for (let j = 0; j < names[index].types.length; j++) {
+        iconsRef.innerHTML += iconsRenderingSmallCards(index, j);
     }
 }
 

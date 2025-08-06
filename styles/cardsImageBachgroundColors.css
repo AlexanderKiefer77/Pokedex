@@ -1,4 +1,19 @@
 
+.typesIconsBG {
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.typesIconsIMG {
+    width: 60%;
+    height: 60%;
+}
+
+
 /* colors for background cards image */
 .bug {
     background-color: chartreuse;

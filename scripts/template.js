@@ -9,14 +9,17 @@ function cardsRendering(index) {
                     <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage">
                 </div>
                 <footer class="cardFooter">
-                    <div class="typesIconsBG typesIconsBgColorGrass">
-                        <img src="./typesIcons/grass.svg" alt="Icon type grass">
-                    </div>
-                    <div class="typesIconsBG typesIconsBgColorPoison">
-                        <img src="./typesIcons/poison.svg" alt="Icon type poison">
+                    <div id="iconField${index}" class="cardFooter">
                     </div>
                 </footer>
             </div>`
+}
+
+
+function iconsRenderingSmallCards(index, j) {
+    return `<div class="typesIconsBG ${names[index].types[j].type.name}">
+                <img src="./typesIcons/${names[index].types[j].type.name}.svg" class="typesIconsIMG">
+            </div>` 
 }
 
 
