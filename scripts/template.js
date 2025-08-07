@@ -43,7 +43,7 @@ function overlayPictureRenderingMain(index) {
                     <nav class="card2nav">
                         <div class="navButtons">main</div>
                        
-                        <div class="navButtons" onclick="overlayPictureRenderingStats(${index})">stats</div>
+                        <div class="navButtons" onclick="overlayPictureRenderingStats(${index}), renderIconsCardsStats(${index})">stats</div>
                     </nav>
                     <footer class="cardFooter2">
                         <table>
@@ -79,7 +79,7 @@ function overlayPictureRenderingStats(index) {
                     <div class="cardImage2 ${names[index].types[0].type.name}">
                         <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
                     </div>
-                    <div class="cardIcon2">
+                    <div id="iconFieldStats${index}" class="cardIcon2">
                        
                     </div>
                     <nav class="card2nav">

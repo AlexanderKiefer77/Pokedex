@@ -78,6 +78,13 @@ function renderIconsCardsMain(index) {
     }
 }
 
+function renderIconsCardsStats(index) {
+        let iconsRefStats = document.getElementById(`iconFieldStats${index}`);
+        for (let j = 0; j < names[index].types.length; j++) {
+        iconsRefStats.innerHTML += iconsRenderingCardsMain(index, j);
+    }
+}
+
 // for select start card and numbers of cards
 function startID() {
     let inputStartID = document.getElementById('inputFieldStartID').value;
