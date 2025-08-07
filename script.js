@@ -1,4 +1,5 @@
 
+// start-variables for loading the index page
 let offset = 0;
 let limit = 24;
 
@@ -63,27 +64,29 @@ function render(i) {
     }
 }
 
+// render the icons for the small cards
 function renderIconsSmallCards(index) {
         let iconsRef = document.getElementById(`iconField${index}`);
         for (let j = 0; j < names[index].types.length; j++) {
-        iconsRef.innerHTML += iconsRenderingSmallCards(index, j);
+        iconsRef.innerHTML += iconsRendering(index, j);
     }
 }
 
-
+// render the icons for the individual page main
 function renderIconsCardsMain(index) {
         let iconsRef = document.getElementById(`iconFieldMain${index}`);
         for (let j = 0; j < names[index].types.length; j++) {
-        iconsRef.innerHTML += iconsRenderingCardsMain(index, j);
+        iconsRef.innerHTML += iconsRendering(index, j);
     }
 }
-
+// render the icons for the individual page stats
 function renderIconsCardsStats(index) {
         let iconsRefStats = document.getElementById(`iconFieldStats${index}`);
         for (let j = 0; j < names[index].types.length; j++) {
-        iconsRefStats.innerHTML += iconsRenderingCardsMain(index, j);
+        iconsRefStats.innerHTML += iconsRendering(index, j);
     }
 }
+
 
 // for select start card and numbers of cards
 function startID() {

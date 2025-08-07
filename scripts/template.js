@@ -1,4 +1,5 @@
 
+// rendering the small cards 
 function cardsRendering(index) {
     return `<div class="card" onclick="openOverlay(${index})">
                 <header class="cardHeader">
@@ -15,19 +16,14 @@ function cardsRendering(index) {
             </div>`
 }
 
-
-function iconsRenderingSmallCards(index, j) {
+// rendering the icons, used from rendering small cards, main page and stats page
+function iconsRendering(index, j) {
     return `<div class="typesIconsBG ${names[index].types[j].type.name}">
                 <img src="./typesIcons/${names[index].types[j].type.name}.svg" class="typesIconsIMG">
             </div>` 
 }
 
-function iconsRenderingCardsMain(index, j) {
-    return `<div class="typesIconsBG ${names[index].types[j].type.name}">
-                <img src="./typesIcons/${names[index].types[j].type.name}.svg" class="typesIconsIMG">
-            </div>` 
-}
-
+// rendering individual cards page main
 function overlayPictureRenderingMain(index) {
     overlayRef.innerHTML = `<div class="card2">
                     <header class="cardHeader2">
@@ -53,22 +49,22 @@ function overlayPictureRenderingMain(index) {
                             </tr>
                             <tr>
                                 <td class="tableFirstRow">Weight :</td>
-                                <td id="weight">${names[index].weight}</td>
+                                <td>${names[index].weight}</td>
                             </tr>
                             <tr>
                                 <td class="tableFirstRow">Base Experience :</td>
-                                <td id="baseExperience">${names[index].base_experience}</td>
+                                <td>${names[index].base_experience}</td>
                             </tr>
                             <tr>
                                 <td class="tableFirstRow">Abilities :</td>
-                                <td id="abilities">${names[index].abilities[0].ability.name}</td>
+                                <td">${names[index].abilities[0].ability.name}</td>
                             </tr>
                         </table>
                     </footer>
                 </div>`;
 }
 
-
+// rendering individual cards page stats
 function overlayPictureRenderingStats(index) {
     overlayRef.innerHTML = `<div class="card2">
                     <header class="cardHeader2">
