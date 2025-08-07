@@ -89,3 +89,13 @@
 .tableFirstRow {
     padding-right: 20px;
 }
+
+.tableSecondRow {
+    width: 170px;
+}
+
+.progress-bar {
+    background-color: rgb(60, 188, 137) !important;
+    color: black !important;
+    font-weight: bold;
+}

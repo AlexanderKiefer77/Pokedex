@@ -123,7 +123,30 @@ function selectionLoadingTwo(inputStartID, inputFieldNumberCardsLoading) {
         document.getElementById('inputFieldNumberCardsLoading').value = '';
 }
 
+function updateProgressBar(index) {
 
+    // ##############
+    // wert aus schleife übernehmen
+    let percent0 = names[index].stats[0].base_stat;
+    let percent1 = names[index].stats[1].base_stat;
+    let percent2 = names[index].stats[2].base_stat;
+    let percent3 = names[index].stats[3].base_stat;
+    let percent4 = names[index].stats[4].base_stat;
+    let percent5 = names[index].stats[5].base_stat; // Variable für Prozent von Anzahl der Fragen auszurechnen
+    //percent = Math.round(percent * 100); // Prozent von Anzahl der Fragen ausrechnen
+    document.getElementById('progress-bar0').innerHTML = `${percent0}`; // zeigt den Prozentwert in der "progress-bar" an
+    document.getElementById('progress-bar0').style = `width: ${percent0}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+    document.getElementById('progress-bar1').innerHTML = `${percent1}`; // zeigt den Prozentwert in der "progress-bar" an
+    document.getElementById('progress-bar1').style = `width: ${percent1}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+    document.getElementById('progress-bar2').innerHTML = `${percent2}`; // zeigt den Prozentwert in der "progress-bar" an
+    document.getElementById('progress-bar2').style = `width: ${percent2}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+    document.getElementById('progress-bar3').innerHTML = `${percent3}`; // zeigt den Prozentwert in der "progress-bar" an
+    document.getElementById('progress-bar3').style = `width: ${percent3}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+    document.getElementById('progress-bar4').innerHTML = `${percent4}`; // zeigt den Prozentwert in der "progress-bar" an
+    document.getElementById('progress-bar4').style = `width: ${percent4}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+    document.getElementById('progress-bar5').innerHTML = `${percent5}`; // zeigt den Prozentwert in der "progress-bar" an
+    document.getElementById('progress-bar5').style = `width: ${percent5}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+}
 
 
 

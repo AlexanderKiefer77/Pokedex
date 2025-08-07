@@ -39,7 +39,7 @@ function overlayPictureRenderingMain(index) {
                     <nav class="card2nav">
                         <div class="navButtons">main</div>
                        
-                        <div class="navButtons" onclick="overlayPictureRenderingStats(${index}), renderIconsCardsStats(${index})">stats</div>
+                        <div class="navButtons" onclick="overlayPictureRenderingStats(${index}), renderIconsCardsStats(${index}), updateProgressBar(${index})">stats</div>
                     </nav>
                     <footer class="cardFooter2">
                         <table>
@@ -87,27 +87,52 @@ function overlayPictureRenderingStats(index) {
                         <table>
                             <tr>
                                 <td class="tableFirstRow">${names[index].stats[0].stat.name + " :"}</td>
-                                <td>${names[index].stats[0].base_stat}</td>
+                                <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <div id="progress-bar0" class="progress-bar" style="width: 0%"></div>
+                                     </div>
+                                </td>
+                                </td>                                
                             </tr>
                             <tr>
                                 <td class="tableFirstRow">${names[index].stats[1].stat.name + " :"}</td>
-                                <td>${names[index].stats[1].base_stat}</td>
+                                <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <div id="progress-bar1" class="progress-bar" style="width: 0%"></div>
+                                     </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="tableFirstRow">${names[index].stats[2].stat.name + " :"}</td>
-                                <td>${names[index].stats[1].base_stat}</td>
+                                <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <div id="progress-bar2" class="progress-bar" style="width: 0%"></div>
+                                     </div>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="tableFirstRow">${names[index].stats[3].stat.name + " :"}</td>
-                                <td>${names[index].stats[1].base_stat}</td>
+                                <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <div id="progress-bar3" class="progress-bar" style="width: 0%"></div>
+                                     </div>
+                                </td>
                             </tr>
                              <tr>
                                 <td class="tableFirstRow">${names[index].stats[4].stat.name + " :"}</td>
-                                <td>${names[index].stats[1].base_stat}</td>
+                                <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <div id="progress-bar4" class="progress-bar" style="width: 0%"></div>
+                                     </div>
+                                </td>
                             </tr>
                              <tr>
                                 <td class="tableFirstRow">${names[index].stats[5].stat.name + " :"}</td>
-                                <td>${names[index].stats[1].base_stat}</td>
+                                <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <div id="progress-bar5" class="progress-bar" style="width: 0%"></div>
+                                     </div>
+                                </td>
                             </tr>
                         </table>
                     </footer>
