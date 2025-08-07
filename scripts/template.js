@@ -1,7 +1,7 @@
 
 // rendering the small cards 
 function cardsRendering(index) {
-    return `<div class="card" onclick="openOverlay(${index})">
+    return `<div class="cards" onclick="openOverlay(${index})">
                 <header class="cardHeader">
                     <div>${names[index].id}</div>
                     <div>${names[index].name}</div>
@@ -57,7 +57,7 @@ function overlayPictureRenderingMain(index) {
                             </tr>
                             <tr>
                                 <td class="tableFirstRow">Abilities :</td>
-                                <td">${names[index].abilities[0].ability.name}</td>
+                                <td>${names[index].abilities[0].ability.name}</td>
                             </tr>
                         </table>
                     </footer>

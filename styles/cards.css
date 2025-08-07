@@ -1,7 +1,7 @@
 
 /* for cards View small */ 
 
-.card {
+.cards {
     width: 180px;
     height: 260px;
     display: flex;
