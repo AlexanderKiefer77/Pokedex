@@ -2,10 +2,22 @@
 /* ####################################### */
 /* this classes are only used in Impressum */
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*position: relative;*/
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
 .h1Impressum, .h2Impressum {
     color: darkblue;
 }
-
 
 .contentWidthImpressum {
     box-sizing: border-box;
@@ -37,6 +49,14 @@
     padding-left: 24px;
 }
 
+.headerImpressum a {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    gap: 20px;
+    color: white;
+}
+
 .footerImpressum {
     height: 100px;
     background-color: var(--backgroundColorHeaderFooter);
@@ -49,4 +69,12 @@
 .footerImpressum img {
     height: 80px;
     padding-left: 24px;
+}
+
+.footerImpressum a {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    gap: 20px;
+    color: white;
 }
