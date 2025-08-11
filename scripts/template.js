@@ -19,8 +19,8 @@ function cardsRendering(index) {
 // rendering the icons, used from rendering small cards, main page and stats page
 function iconsRendering(index, j) {
     return `<div class="typesIconsBG ${names[index].types[j].type.name}">
-                <img src="./typesIcons/${names[index].types[j].type.name}.svg" class="typesIconsIMG">
-            </div>` 
+                <img src="./assets/typesIcons/${names[index].types[j].type.name}.svg" class="typesIconsIMG">
+            </div>`
 }
 
 // rendering individual cards page main
@@ -29,7 +29,7 @@ function overlayPictureRenderingMain(index) {
                     <header class="cardHeader2">
                         <div>${names[index].id}</div>
                         <div>${names[index].name}</div>
-                        <img src="./img/close.svg" alt="X" onclick="closeOverlay()"> <!-- close button -->
+                        <img src="./assets/img/close.svg" alt="X" onclick="closeOverlay()"> <!-- close button -->
                     </header>
                     <div class="cardImage2 ${names[index].types[0].type.name}">
                         <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
@@ -37,9 +37,8 @@ function overlayPictureRenderingMain(index) {
                     <div id="iconFieldMain${index}" class="cardIcon2">                        
                     </div>
                     <nav class="card2nav">
-                        <div class="navButtons">main</div>
-                       
-                        <div class="navButtons" onclick="overlayPictureRenderingStats(${index}), renderIconsCardsStats(${index}), updateProgressBar(${index})">stats</div>
+                        <button type="button" class="btn btn-info">main</button>                     
+                        <button type="button" class="btn btn-info" onclick="overlayPictureRenderingStats(${index}), renderIconsCardsStats(${index}), updateProgressBar(${index})">stats</button>
                     </nav>
                     <footer class="cardFooter2">
                         <table>
@@ -70,7 +69,7 @@ function overlayPictureRenderingStats(index) {
                     <header class="cardHeader2">
                         <div>${names[index].id}</div>
                         <div>${names[index].name}</div>
-                        <img src="./img/close.svg" alt="X" onclick="closeOverlay()"> <!-- close button -->
+                        <img src="./assets/img/close.svg" alt="X" onclick="closeOverlay()"> <!-- close button -->
                     </header>
                     <div class="cardImage2 ${names[index].types[0].type.name}">
                         <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
@@ -79,9 +78,8 @@ function overlayPictureRenderingStats(index) {
                        
                     </div>
                     <nav class="card2nav">
-                        <div class="navButtons" onclick="overlayPictureRenderingMain(${index}), renderIconsCardsMain(${index})">main</div>
-                       
-                        <div class="navButtons">stats</div>
+                        <button type="button" class="btn btn-info" onclick="overlayPictureRenderingMain(${index}), renderIconsCardsMain(${index})">main</button>                       
+                        <button type="button" class="btn btn-info">stats</button>
                     </nav>
                     <footer class="cardFooter2">
                         <table>

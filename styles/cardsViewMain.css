@@ -7,7 +7,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*justify-content: space-between;*/
 }
 
 .pkmImage2 {
@@ -25,8 +24,8 @@
     height: 40px;
     font-size: 22px;
     font-weight: bold;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .cardImage2 {
@@ -52,21 +51,16 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
     height: 40px;
-    gap: 30px;
 }
 
-.navButtons {
-    background-color: rgb(19, 20, 96);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 33.33%;
-    height: 24px;
-    border-radius: 6px;
-    /*border: 2px solid black;*/
+.btn {
+    width: 40%;
+    height: 30px;
+    padding: 0 !important;
+    font-weight: bold !important;
 }
 
 .navButtons:hover {
@@ -80,8 +74,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     padding-top: 10px;
     padding-left: 10px;
 }
