@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="./styles/standart.css">
     <link rel="stylesheet" href="./styles/variables.css">
-    <link rel="stylesheet" href="./styles/buttons.css">
+    <link rel="stylesheet" href="./styles/navMenue.css">
     <link rel="stylesheet" href="./styles/overlay.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./styles/cards.css">
@@ -31,14 +31,8 @@
                     <img src="./assets/img/pokemon.png" alt="Pokemon Logo" class="headerImage">
                     Pokedex
                 </div>
-                <div class="selectionFiled">
-                    <label for="inputFieldStartID">Erste Karte</label>
-                    <input id="inputFieldStartID" class="input" type="text" placeholder=". . ." required>
-                    <label for="inputFieldNumberCardsLoading">Anzahl Karten</label>
-                    <input id="inputFieldNumberCardsLoading" class="input" type="text" placeholder=". . ."
-                        required>
-                    <button class="input inputBtn" onclick="startID()">SUBMIT</button>
-                </div>
+                <input type="image" src="./assets/img/menu.svg" alt="Logo Navigationsmenü"
+                    aria-label="Navigations-Menü öffnen" class="navButton" onclick="toggleRespMenu()">
             </section>
         </div>
     </header>
@@ -47,8 +41,30 @@
 
     <main id="aot" class="main"> <!-- entire width area without header footer -->
         <div class="contentWidth">
+
+            <div id="resp_menu" class="resp_menu_box resp_menu_closed">               
+                <nav class="navbar navbar-light">
+                    <div class="selectionFiled"> <!-- card search section -->
+                        <label for="inputFieldStartID">Erste Karte</label>
+                        <input id="inputFieldStartID" class="form-control mr-sm-2 input" type="text" placeholder="..." required>
+                        <label for="inputFieldNumberCardsLoading">Anzahl Karten</label>
+                        <input id="inputFieldNumberCardsLoading" class="form-control mr-sm-2 input" type="text" placeholder="..." required>
+                        <button class="btn btn-outline-success my-2 my-sm-0" onclick="startID()">Suchen</button>
+                    </div>
+
+                    <form class="selectionFiled form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                
+                    <input type="image" src="./assets/img/menu.svg" alt="Logo Navigationsmenü"
+                    aria-label="Navigations-Menü schließen" class="navButton" onclick="toggleRespMenu()">
+                </nav>
+            </div>
+
             <section id="smallCardsPlace" class="content"> <!-- area without header foooter -->
             </section>
+            
         </div>
     </main>
 
@@ -57,7 +73,7 @@
             <section class="innerFooter">
                 <div class="headerIMG">
                     <img src="./assets/img/pokemon.png" alt="Pokemon Logo">Pokedex
-                </div>                
+                </div>
                 <a href="./impressum.html">Impressum</a>
             </section>
         </div>

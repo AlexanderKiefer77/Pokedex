@@ -148,8 +148,9 @@ function updateProgressBar(index) {
     document.getElementById('progress-bar5').style = `width: ${percent5}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
 }
 
-
-
+function toggleRespMenu() {
+  document.getElementById('resp_menu').classList.toggle('resp_menu_closed')
+}
 
 
 // let no1 = await fetch(url="https://pokeapi.co/api/v2/pokemon/1");

@@ -1,0 +1,52 @@
+
+.resp_menu_box {
+    background-color: var(--backgroundColorHeaderFooter);
+    height: 96px;
+    position: absolute;
+    top: -100px;
+    right: 0;
+    transition: all 250ms ease-in-out;
+}
+
+.resp_menu_closed {
+    transform: translateY(-100%);
+}
+
+.navbar {
+    width: 100%;
+    height: 100%;
+    gap: 24px;
+    justify-content: space-between !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+
+.navButton {
+    width: 60px;
+}
+
+.input {
+    width: 70px !important;
+}
+
+.form-inline {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--backgroundColorHeaderFooter);
+    align-items: center;
+}
+
+.selectionFiled {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid white;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+label {
+    font-size: 16px;
+}
+
