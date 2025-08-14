@@ -20,7 +20,7 @@
     <!--<link rel="stylesheet" href="./styles/typesIcons.css">-->
 
     <script src="./scripts/template.js"></script>
-    <script src="./scripts/overlay.js" defer></script>
+    <script src="./scripts/overlay.js" defer></script> 
 </head>
 
 <body onload="init()">
@@ -32,39 +32,51 @@
                     Pokedex
                 </div>
                 <input type="image" src="./assets/img/menu.svg" alt="Logo Navigationsmenü"
-                    aria-label="Navigations-Menü öffnen" class="navButton" onclick="toggleRespMenu()">
+                    aria-label="Navigations-Menü öffnen" id="navObenButton" class="navButton" onclick="toggleRespMenuOpen()">
             </section>
         </div>
     </header>
 
     <div id="overlay"></div>
 
-    <main id="aot" class="main"> <!-- entire width area without header footer -->
+    <main id="aot" class="main">
         <div class="contentWidth">
 
-            <div id="resp_menu" class="resp_menu_box resp_menu_closed">               
-                <nav class="navbar navbar-light">
-                    <div class="selectionFiled"> <!-- card search section -->
-                        <label for="inputFieldStartID">Erste Karte</label>
-                        <input id="inputFieldStartID" class="form-control mr-sm-2 input" type="text" placeholder="..." required>
-                        <label for="inputFieldNumberCardsLoading">Anzahl Karten</label>
-                        <input id="inputFieldNumberCardsLoading" class="form-control mr-sm-2 input" type="text" placeholder="..." required>
-                        <button class="btn btn-outline-success my-2 my-sm-0" onclick="startID()">Suchen</button>
+            <div id="respMenu" class="respMenuBox respMenuClosed">
+                <nav class="navBarOwn">
+                    <div class="selectionField">
+                        <div class="firstCardSearchField">
+                            <label for="inputFieldStartID">Erste Karte</label>
+                            <input id="inputFieldStartID" class="form-control mr-sm-2 input" type="text"
+                                placeholder="..." required>
+                        </div>
+
+                        <div class="numberOfCardsSearchField">
+                            <label for="inputFieldNumberCardsLoading">Anzahl Karten</label>
+                            <input id="inputFieldNumberCardsLoading" class="form-control mr-sm-2 input" type="text"
+                                placeholder="..." required>
+                        </div>
+
+                        <div>
+                            <button class="searchFieldutton btn btn-outline-success my-2 my-sm-0" onclick="startID()">Suchen</button>
+                        </div>
                     </div>
 
-                    <form class="selectionFiled form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                
+                    <div class="searchField">
+                        <form class="selectionFieldSearch form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+
                     <input type="image" src="./assets/img/menu.svg" alt="Logo Navigationsmenü"
-                    aria-label="Navigations-Menü schließen" class="navButton" onclick="toggleRespMenu()">
+                        aria-label="Navigations-Menü schließen" class="navButton" onclick="toggleRespMenuClose()">
                 </nav>
             </div>
 
-            <section id="smallCardsPlace" class="content"> <!-- area without header foooter -->
+            <section id="smallCardsPlace" class="content">
             </section>
-            
+
         </div>
     </main>
 

@@ -148,8 +148,14 @@ function updateProgressBar(index) {
     document.getElementById('progress-bar5').style = `width: ${percent5}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
 }
 
-function toggleRespMenu() {
-  document.getElementById('resp_menu').classList.toggle('resp_menu_closed')
+function toggleRespMenuOpen() {
+  document.getElementById('respMenu').classList.toggle('respMenuClosed');
+  document.getElementById('navObenButton').classList.add('d_none');
+}
+
+function toggleRespMenuClose() {
+  document.getElementById('respMenu').classList.toggle('respMenuClosed');
+  document.getElementById('navObenButton').classList.remove('d_none');
 }
 
 

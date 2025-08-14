@@ -19,7 +19,7 @@ function cardsRendering(index) {
 // rendering the icons, used from rendering small cards, main page and stats page
 function iconsRendering(index, j) {
     return `<div class="typesIconsBG ${names[index].types[j].type.name}">
-                <img src="./assets/typesIcons/${names[index].types[j].type.name}.svg" class="typesIconsIMG">
+                <img src="./assets/typesIcons/${names[index].types[j].type.name}.svg" alt="type Icons" class="typesIconsIMG">
             </div>`
 }
 
