@@ -6,6 +6,7 @@
     display: flex;
     border-bottom: solid;
     border-color: var(--borderColorHeaderFooter);
+    transition: 150ms linear; /* for navbar responsive */
 }
 
 .headerIMG {

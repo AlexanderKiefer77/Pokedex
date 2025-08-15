@@ -148,14 +148,36 @@ function updateProgressBar(index) {
     document.getElementById('progress-bar5').style = `width: ${percent5}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
 }
 
-function toggleRespMenuOpen() {
-  document.getElementById('respMenu').classList.toggle('respMenuClosed');
-  document.getElementById('navObenButton').classList.add('d_none');
+function checkWindowWidth() { // for responsive
+    if (window.innerWidth > 900) {
+        toggleRespMenuOpenMore900();
+    } else if (window.innerWidth >500 && window.innerWidth <= 900) {
+        toggleRespMenuOpenBetween500and900();
+    } else {
+        toggleRespMenuOpenLess500();             
+    } 
+}
+
+function toggleRespMenuOpenMore900() {
+    document.getElementById('respMenu').classList.toggle('respMenuClosed');
+}
+
+function toggleRespMenuOpenBetween500and900() {
+    document.getElementById('header').style.height = "245px";
+    document.getElementById('respMenu').style.top = "-245px";
+    document.getElementById('respMenu').classList.toggle('respMenuClosed');
+}
+
+function toggleRespMenuOpenLess500() {
+    document.getElementById('header').style.height = "365px";
+    document.getElementById('respMenu').style.top = "-365px";     
+    document.getElementById('respMenu').classList.toggle('respMenuClosed');
 }
 
 function toggleRespMenuClose() {
-  document.getElementById('respMenu').classList.toggle('respMenuClosed');
-  document.getElementById('navObenButton').classList.remove('d_none');
+    document.getElementById('header').style.height = "100px";
+    document.getElementById('respMenu').style.top = "-100px";
+    document.getElementById('respMenu').classList.toggle('respMenuClosed');
 }
 
 
