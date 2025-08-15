@@ -123,32 +123,17 @@ function selectionLoadingTwo(inputStartID, inputFieldNumberCardsLoading) {
         document.getElementById('inputFieldNumberCardsLoading').value = '';
 }
 
+// for progress-bar
 function updateProgressBar(index) {
-
-    // ##############
-    // wert aus schleife übernehmen
-    let percent0 = names[index].stats[0].base_stat;
-    let percent1 = names[index].stats[1].base_stat;
-    let percent2 = names[index].stats[2].base_stat;
-    let percent3 = names[index].stats[3].base_stat;
-    let percent4 = names[index].stats[4].base_stat;
-    let percent5 = names[index].stats[5].base_stat; // Variable für Prozent von Anzahl der Fragen auszurechnen
-    //percent = Math.round(percent * 100); // Prozent von Anzahl der Fragen ausrechnen
-    document.getElementById('progress-bar0').innerHTML = `${percent0}`; // zeigt den Prozentwert in der "progress-bar" an
-    document.getElementById('progress-bar0').style = `width: ${percent0}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
-    document.getElementById('progress-bar1').innerHTML = `${percent1}`; // zeigt den Prozentwert in der "progress-bar" an
-    document.getElementById('progress-bar1').style = `width: ${percent1}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
-    document.getElementById('progress-bar2').innerHTML = `${percent2}`; // zeigt den Prozentwert in der "progress-bar" an
-    document.getElementById('progress-bar2').style = `width: ${percent2}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
-    document.getElementById('progress-bar3').innerHTML = `${percent3}`; // zeigt den Prozentwert in der "progress-bar" an
-    document.getElementById('progress-bar3').style = `width: ${percent3}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
-    document.getElementById('progress-bar4').innerHTML = `${percent4}`; // zeigt den Prozentwert in der "progress-bar" an
-    document.getElementById('progress-bar4').style = `width: ${percent4}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
-    document.getElementById('progress-bar5').innerHTML = `${percent5}`; // zeigt den Prozentwert in der "progress-bar" an
-    document.getElementById('progress-bar5').style = `width: ${percent5}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+    for (let k = 0; k < names[index].stats.length; k++) {
+        let percent = names[index].stats[k].base_stat;
+        document.getElementById('progress-bar'+`${k}`).innerHTML = `${percent}`; // write the percent value in the "progress-bar"
+        document.getElementById('progress-bar'+`${k}`).style = `width: ${percent}%;`; // write the percent value in width from the "progress-bar"
+    } 
 }
 
-function checkWindowWidth() { // for responsive
+// for responsive navbar
+function checkWindowWidth() {
     if (window.innerWidth > 900) {
         toggleRespMenuOpenMore900();
     } else if (window.innerWidth >500 && window.innerWidth <= 900) {
@@ -158,22 +143,26 @@ function checkWindowWidth() { // for responsive
     } 
 }
 
+// screen width more as 900px
 function toggleRespMenuOpenMore900() {
     document.getElementById('respMenu').classList.toggle('respMenuClosed');
 }
 
+// screen width between 500px and 900px
 function toggleRespMenuOpenBetween500and900() {
     document.getElementById('header').style.height = "245px";
     document.getElementById('respMenu').style.top = "-245px";
     document.getElementById('respMenu').classList.toggle('respMenuClosed');
 }
 
+// screen width less 500px
 function toggleRespMenuOpenLess500() {
     document.getElementById('header').style.height = "365px";
     document.getElementById('respMenu').style.top = "-365px";     
     document.getElementById('respMenu').classList.toggle('respMenuClosed');
 }
 
+//navbar close
 function toggleRespMenuClose() {
     document.getElementById('header').style.height = "100px";
     document.getElementById('respMenu').style.top = "-100px";
@@ -274,3 +263,24 @@ function toggleRespMenuClose() {
     //
 
 
+//    // ##############
+//    // wert aus schleife übernehmen
+//    let percent0 = names[index].stats[0].base_stat;
+//    let percent1 = names[index].stats[1].base_stat;
+//    let percent2 = names[index].stats[2].base_stat;
+//    let percent3 = names[index].stats[3].base_stat;
+//    let percent4 = names[index].stats[4].base_stat;
+//    let percent5 = names[index].stats[5].base_stat; // Variable für Prozent von Anzahl der Fragen auszurechnen
+//    //percent = Math.round(percent * 100); // Prozent von Anzahl der Fragen ausrechnen
+//    document.getElementById('progress-bar0').innerHTML = `${percent0}`; // zeigt den Prozentwert in der "progress-bar" an
+//    document.getElementById('progress-bar0').style = `width: ${percent0}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+//    document.getElementById('progress-bar1').innerHTML = `${percent1}`; // zeigt den Prozentwert in der "progress-bar" an
+//    document.getElementById('progress-bar1').style = `width: ${percent1}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+//    document.getElementById('progress-bar2').innerHTML = `${percent2}`; // zeigt den Prozentwert in der "progress-bar" an
+//    document.getElementById('progress-bar2').style = `width: ${percent2}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+//    document.getElementById('progress-bar3').innerHTML = `${percent3}`; // zeigt den Prozentwert in der "progress-bar" an
+//    document.getElementById('progress-bar3').style = `width: ${percent3}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+//    document.getElementById('progress-bar4').innerHTML = `${percent4}`; // zeigt den Prozentwert in der "progress-bar" an
+//    document.getElementById('progress-bar4').style = `width: ${percent4}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
+//    document.getElementById('progress-bar5').innerHTML = `${percent5}`; // zeigt den Prozentwert in der "progress-bar" an
+//    document.getElementById('progress-bar5').style = `width: ${percent5}%;`; // schreibt den aktuellen Prozentwert in width der "progress-bar" rein
