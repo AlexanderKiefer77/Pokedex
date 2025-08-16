@@ -39,7 +39,7 @@
 
 .cardFooter {
     background-color: var(--backgroundColorHeaderFooterCards);
-    width: 100%;
+    width: 200px;
     height: 50px;
     display: flex;
     justify-content: center;

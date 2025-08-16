@@ -21,3 +21,10 @@ function closeOverlay() { // function closing the Overlay
     displayAOT.classList.remove("d_none"); // removed AOT class d_none, This will display the contents of the AOT again
 }
 
+function openOverlaySearch(index) { // render the Overlay picture
+    overlayPictureRenderingMainSearch(index);
+    renderIconsCardsMainSearch(index);
+    toggleOverlay(); // starting toggle function
+    displayAOT.classList.add("d_none"); // add AOT the class d_none, This hides the contents of the AOT    
+}
+

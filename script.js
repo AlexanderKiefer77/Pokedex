@@ -39,7 +39,7 @@ async function fetchDataJson(path = "") {
     }
 }
 
-async function render() {
+async function render(index) {
     for (let index = 0; index < names.length; index++) {
         cardsRef.innerHTML += cardsRendering(index);
         renderIconsSmallCards(index);
