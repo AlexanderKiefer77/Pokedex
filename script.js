@@ -20,9 +20,10 @@ async function usePromise() {
     try {
         console.log("Abfrage gestartet");
         await fetchDataJson();
-        console.log('Abfrage beendet');
+        //console.log('Abfrage beendet');
     } catch (error) {
-        console.error('Fehler beim Abrufen der Daten:', error); // durch console.error wird es in der console als error markiert
+        console.error('Fehler beim Abrufen der Daten:', error);
+        alert("Es gibt Probleme mit Ihrer Internet Verbindung");
     }
     stopLoadingSpinner();
 }
@@ -37,6 +38,7 @@ async function fetchDataJson(path = "") {
         let element2 = await element.json();
         names.push(element2);
     }
+    console.log('Abfrage beendet');
 }
 
 async function render(index) {
