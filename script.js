@@ -41,6 +41,7 @@ async function fetchDataJson(path = "") {
     console.log('Abfrage beendet');
 }
 
+// render the small cards
 async function render(index) {
     for (let index = 0; index < names.length; index++) {
         cardsRef.innerHTML += cardsRendering(index);

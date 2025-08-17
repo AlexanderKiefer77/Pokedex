@@ -37,7 +37,7 @@ function overlayPictureRenderingMain(index) {
                     <div id="iconFieldMain${index}" class="cardIcon2">                        
                     </div>
                     <nav class="card2nav">
-                        <button type="button" class="btn btn-info">main</button>                     
+                        <button type="button" class="btn btn-info" disabled>main</button>                     
                         <button type="button" class="btn btn-info" onclick="overlayPictureRenderingStats(${index}), renderIconsCardsStats(${index}), updateProgressBar(${index})">stats</button>
                     </nav>
                     <footer class="cardFooter2">
@@ -79,7 +79,7 @@ function overlayPictureRenderingStats(index) {
                     </div>
                     <nav class="card2nav">
                         <button type="button" class="btn btn-info" onclick="overlayPictureRenderingMain(${index}), renderIconsCardsMain(${index})">main</button>                       
-                        <button type="button" class="btn btn-info">stats</button>
+                        <button type="button" class="btn btn-info" disabled>stats</button>
                     </nav>
                     <footer class="cardFooter2">
                         <table>
