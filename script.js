@@ -10,7 +10,6 @@ let names = [];
 let responseAsJson = [];
 let cardsRef = document.getElementById('smallCardsPlace');
 
-
 async function init() {
     await usePromise();
     render();

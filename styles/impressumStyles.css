@@ -40,7 +40,7 @@ a {
     display: flex;
     align-items: center;
     height: 100px;
-    background-color: var(--backgroundColorHeaderFooter);
+    background-color: var(--backgroundColorHeader);
     border-bottom: solid;
     border-color: var(--borderColorHeaderFooter);
 }
@@ -61,7 +61,7 @@ a {
 /* ####################################### */
 .footerImpressum {
     height: 100px;
-    background-color: var(--backgroundColorHeaderFooter);
+    background-color: var(--backgroundColorFooter);
     display: flex;
     align-items: center;
     border-top: solid;
@@ -80,3 +80,4 @@ a {
     gap: 20px;
     color: white;
 }
+

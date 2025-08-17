@@ -4,11 +4,12 @@
     --maxWidth: 1440px;
 
     /* Variables for colors */    
-    --backgroundColorHeaderFooter: #082029;
-    --backgroundColorAOT: #05171E;
+    --backgroundColorHeader: #2486c7;
+    --backgroundColorAOT: #304502;
+    --backgroundColorFooter: #002c03;
     --borderColorHeaderFooter: rgba(114, 87, 87, 0.477);
-    --backgroundColorOverlayBackground: whitesmoke;
-    --backgroundColorOverlav: #05171e;
+    /*--backgroundColorOverlayBackground: whitesmoke;*/
+    --backgroundColorOverlav: #304502;
 
     /* Cards */
     --backgroundColorHeaderFooterCards: #1d4858;

@@ -2,7 +2,7 @@
 /* ######################################################## */
 .header {
     height: 100px;
-    background-color: var(--backgroundColorHeaderFooter);
+    background-color: var(--backgroundColorHeader);
     display: flex;
     border-bottom: solid;
     border-color: var(--borderColorHeaderFooter);
@@ -52,7 +52,7 @@
 /* ######################################################## */
 .footer {
     height: 100px;
-    background-color: var(--backgroundColorHeaderFooter);
+    background-color: var(--backgroundColorFooter);
     display: flex;
     align-items: center;
     border-top: solid;
