@@ -6,9 +6,9 @@ function cardsRenderingSearch(index) {
                     <div>${gefiltertesArray[index].id}</div>
                     <div>${gefiltertesArray[index].name}</div>
                 </header>
-                <div class="cardImage ${gefiltertesArray[index].types[0].type.name}">
+                <figure class="cardImage ${gefiltertesArray[index].types[0].type.name}">
                     <img src="${gefiltertesArray[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage">
-                </div>
+                </figure>
                 <footer>
                     <div id="iconField${index}" class="cardFooter">
                     </div>
@@ -18,9 +18,9 @@ function cardsRenderingSearch(index) {
 
 // searching function - rendering the icons, used from rendering small cards, main page and stats page
 function iconsRenderingSearch(index, k) {
-    return `<div class="typesIconsBG ${gefiltertesArray[index].types[k].type.name}">
+    return `<figure class="typesIconsBG ${gefiltertesArray[index].types[k].type.name}">
                 <img src="./assets/typesIcons/${gefiltertesArray[index].types[k].type.name}.svg" class="typesIconsIMG">
-            </div>`
+            </figure>`
 }
 
 // searching function - rendering individual cards page main
@@ -29,11 +29,11 @@ function overlayPictureRenderingMainSearch(index) {
                     <header class="cardHeader2">
                         <div>${gefiltertesArray[index].id}</div>
                         <div>${gefiltertesArray[index].name}</div>
-                        <img src="./assets/img/close.svg" alt="X" onclick="closeOverlay()"> <!-- close button -->
+                        <button type="button" class="btn-close btn-close-white" aria-label="Close" onclick="closeOverlay()"></button>
                     </header>
-                    <div class="cardImage2 ${gefiltertesArray[index].types[0].type.name}">
+                    <figure class="cardImage2 ${gefiltertesArray[index].types[0].type.name}">
                         <img src="${gefiltertesArray[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
-                    </div>
+                    </figure>
                     <div id="iconFieldMain${index}" class="cardIcon2">                       
                     </div>
                     <nav class="card2nav">
@@ -70,11 +70,11 @@ function overlayPictureRenderingStatsSearch(index) {
                     <header class="cardHeader2">
                         <div>${gefiltertesArray[index].id}</div>
                         <div>${gefiltertesArray[index].name}</div>
-                        <img src="./assets/img/close.svg" alt="X" onclick="closeOverlay()"> <!-- close button -->
+                        <button type="button" class="btn-close btn-close-white" aria-label="Close" onclick="closeOverlay()"></button>
                     </header>
-                    <div class="cardImage2 ${gefiltertesArray[index].types[0].type.name}">
+                    <figure class="cardImage2 ${gefiltertesArray[index].types[0].type.name}">
                         <img src="${gefiltertesArray[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
-                    </div>
+                    </figure>
                     <div id="iconFieldStats${index}" class="cardIcon2">                        
                     </div>
                     <nav class="card2nav">
