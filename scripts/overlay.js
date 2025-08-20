@@ -22,7 +22,6 @@ function closeOverlay() { // function closing the Overlay
 
 // verhindert eventBubling beim Overlay
 function logDownWBubblingPrevention(event) { 
-    console.log("logDown");
     event.stopPropagation();
 }
 

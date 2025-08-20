@@ -17,7 +17,7 @@ async function init() {
 
 async function usePromise() {
     try {
-        console.log("Abfrage gestartet");
+        //console.log("Abfrage gestartet");
         await fetchDataJson();
         //console.log('Abfrage beendet');
     } catch (error) {
@@ -37,7 +37,7 @@ async function fetchDataJson(path = "") {
         let element2 = await element.json();
         names.push(element2);
     }
-    console.log('Abfrage beendet');
+    //console.log('Abfrage beendet');
 }
 
 // render the small cards
@@ -46,6 +46,7 @@ async function render(index) {
         cardsRef.innerHTML += cardsRendering(index);
         renderIconsSmallCards(index);
     }
+    cardsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="moreCards()">weitere Karten Laden</button>`;
 }
 
 // render the icons for the small cards
@@ -71,6 +72,14 @@ function renderIconsCardsStats(index) {
     }
 }
 
+// for button More Cards Loading
+function moreCards() {
+    offset = names.length;
+    limit = 24;       
+    BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit="+limit+"&offset="+offset;
+    init();
+}
+
 // for select start card and numbers of cards
 function startID() {
     let inputStartID = document.getElementById('inputFieldStartID').value;
@@ -88,15 +97,33 @@ function startID() {
 
 // loading selected small cards from input
 async function cardsLoading(offset, inputFieldNumberCardsLoading) {
-    console.log("neu laden gestartet");    
+    //console.log("neu laden gestartet");    
     cardsRef.innerHTML = '';
     names = [];
     limit = inputFieldNumberCardsLoading;
     BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit="+limit+"&offset="+offset;  
     await usePromise();
-    render();
+    renderForSelectedSearch();
     document.getElementById('inputFieldStartID').value = '';
     document.getElementById('inputFieldNumberCardsLoading').value = '';
+}
+
+// render the small cards with selected start and number of cards
+async function renderForSelectedSearch(index) {
+    for (let index = 0; index < names.length; index++) {
+        cardsRef.innerHTML += cardsRendering(index);
+        renderIconsSmallCards(index);
+    }
+    cardsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="startView()">Startseite laden</button>`;
+}
+
+// button for loading standart page 
+function startView() {
+    names = [];
+    offset = 0;
+    limit = 36;       
+    BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit="+limit+"&offset="+offset;
+    init();
 }
 
 // for progress-bar
