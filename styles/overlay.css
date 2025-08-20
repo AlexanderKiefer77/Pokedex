@@ -1,13 +1,21 @@
 
 .overlayClass { /* position overlay */
-    position: relative;
-    top: 0;
+    position: absolute;
+    top: 100px;
     left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: calc(100vh - 200px); /*200px=100px Header und 100px Footer */
-    background-color: var(--backgroundColorOverlav);
+    min-height: calc(100% - 200px);
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+}
+
+.innerOverlay {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
