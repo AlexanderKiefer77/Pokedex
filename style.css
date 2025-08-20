@@ -29,7 +29,6 @@
     font-size: 40px;
 }
 
-
 /* ######################################################## */
 .main {
     /* entire width area without header footer */
@@ -39,7 +38,7 @@
 .content {
     /* area without header foooter */
     width: calc(100%-300px);
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 276px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,6 +47,11 @@
     padding: 24px;
 }
 
+.buttonsPlace {
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: center;
+}
 
 /* ######################################################## */
 .footer {

@@ -1,8 +1,8 @@
 
 /* for cards View small */ 
 .cards {
-    width: 200px;
-    height: 280px;
+    width: 220px;
+    height: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,6 +57,12 @@ figure {
     border-top-right-radius: 16px;
 }
 
+.smallCardsName {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
 .cardImage {
     width: 100%;
     flex-grow: 1;
@@ -72,8 +78,8 @@ figure {
 
 .cardFooter {
     background-color: var(--backgroundColorHeaderFooterCards);
-    width: 200px;
-    height: 50px;
+    width: 220px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;

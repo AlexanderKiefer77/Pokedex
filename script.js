@@ -1,7 +1,7 @@
 
 // start-variables for loading the index page
 let offset = 0;
-let limit = 36;
+let limit = 30;
 
 // adresse von pokemon API 
 let BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" + offset;
@@ -9,6 +9,7 @@ let BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" +
 let names = [];
 let responseAsJson = [];
 let cardsRef = document.getElementById('smallCardsPlace');
+let buttonsRef = document.getElementById('buttonsPlace');
 
 async function init() {
     await usePromise();
@@ -46,7 +47,7 @@ async function render(index) {
         cardsRef.innerHTML += cardsRendering(index);
         renderIconsSmallCards(index);
     }
-    cardsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="moreCards()">weitere Karten Laden</button>`;
+    buttonsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="moreCards()">weitere Karten Laden</button>`;
 }
 
 // render the icons for the small cards
@@ -75,8 +76,9 @@ function renderIconsCardsStats(index) {
 // for button More Cards Loading
 function moreCards() {
     offset = names.length;
-    limit = 24;       
+    limit = 20;       
     BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit="+limit+"&offset="+offset;
+    buttonsRef.innerHTML = '';
     init();
 }
 
@@ -110,18 +112,20 @@ async function cardsLoading(offset, inputFieldNumberCardsLoading) {
 
 // render the small cards with selected start and number of cards
 async function renderForSelectedSearch(index) {
+    buttonsRef.innerHTML = '';
     for (let index = 0; index < names.length; index++) {
         cardsRef.innerHTML += cardsRendering(index);
         renderIconsSmallCards(index);
     }
-    cardsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="startView()">Startseite laden</button>`;
+    buttonsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="startView()">Startseite laden</button>`;
 }
 
 // button for loading standart page 
 function startView() {
+    buttonsRef.innerHTML = '';
     names = [];
     offset = 0;
-    limit = 36;       
+    limit = 30;       
     BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit="+limit+"&offset="+offset;
     init();
 }

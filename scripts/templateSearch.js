@@ -4,7 +4,7 @@ function cardsRenderingSearch(index) {
     return `<div class="cards" onclick="openOverlaySearch(${index})">
                 <header class="cardHeader">
                     <div>${gefiltertesArray[index].id}</div>
-                    <div>${gefiltertesArray[index].name}</div>
+                    <div class="smallCardsName">${gefiltertesArray[index].name}</div>
                 </header>
                 <figure class="cardImage ${gefiltertesArray[index].types[0].type.name}">
                     <img src="${gefiltertesArray[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage">

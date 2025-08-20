@@ -4,7 +4,7 @@ function cardsRendering(index) {
     return `<div class="cards" onclick="openOverlay(${index})">
                 <header class="cardHeader">
                     <div>${names[index].id}</div>
-                    <div>${names[index].name}</div>
+                    <div class="smallCardsName">${names[index].name}</div>
                 </header>
                 <figure class="cardImage ${names[index].types[0].type.name}">
                     <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage">
