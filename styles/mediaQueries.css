@@ -31,6 +31,20 @@
         padding-left: 0;
         padding-right: 0;
     }
+
+    .selectionField {
+        max-width: 460px;
+        width: 100%;
+    }
+
+    .searchField {
+        max-width: 460px;
+        width: 100%;
+    }
+    
+    .selectionFieldSearch {
+        max-width: 480px;
+    }
 }
 
 @media(max-width: 500px) {
@@ -68,11 +82,13 @@
         height: 200px;
         align-items: center;
         justify-content: center;
+        max-width: 280px;
+        width: 100%;
     }
 
-    .selectionFieldSearch {
-        margin-left: 24px;
-        margin-right: 24px;
+     .searchField {
+        max-width: 280px;
+        width: 100%;
     }
 }
 
