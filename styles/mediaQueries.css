@@ -45,6 +45,11 @@
     .selectionFieldSearch {
         max-width: 480px;
     }
+
+    .innerHeader {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
 }
 
 @media(max-width: 500px) {
@@ -56,10 +61,12 @@
         height: 40px;
     }
 
+    .headerIMG {
+        gap: 10px;
+    }
+
     .innerHeader {
-        font-size: 24px;
-        padding-left: 24px;
-        padding-right: 24px;
+        font-size: 20px;
     }
 
     .footer {

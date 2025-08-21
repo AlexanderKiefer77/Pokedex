@@ -86,7 +86,9 @@ label {
     border-radius: 8px;
 }
 
-.navButton {
-    width: 60px;
+.searchButton {
+    width: 120px !important;
+    height: 40px !important;
+    font-size: 20px !important;
 }
 
