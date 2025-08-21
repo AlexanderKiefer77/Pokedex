@@ -76,8 +76,8 @@ function renderIconsCardsStats(index) {
 // for button More Cards Loading
 function moreCards() {
     offset = names.length;
-    limit = 20;       
-    BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit="+limit+"&offset="+offset;
+    limit = 20;
+    BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" + offset;
     buttonsRef.innerHTML = '';
     init();
 }
@@ -88,6 +88,12 @@ function startID() {
     let inputFieldNumberCardsLoading = document.getElementById('inputFieldNumberCardsLoading').value;
     if (inputStartID == "" || inputFieldNumberCardsLoading == "") {
         return;
+    } else if (inputStartID < 0 || inputFieldNumberCardsLoading < 1) {
+        alert("Die Eingabe muss größer 0 sein !");
+    } else if (inputFieldNumberCardsLoading > 20) {
+        inputFieldNumberCardsLoading = 20;
+        offset = inputStartID;
+        cardsLoading(offset, inputFieldNumberCardsLoading);
     } else if (inputStartID == 0) {
         offset = inputStartID;
         cardsLoading(offset, inputFieldNumberCardsLoading);
@@ -103,7 +109,7 @@ async function cardsLoading(offset, inputFieldNumberCardsLoading) {
     cardsRef.innerHTML = '';
     names = [];
     limit = inputFieldNumberCardsLoading;
-    BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit="+limit+"&offset="+offset;  
+    BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" + offset;
     await usePromise();
     renderForSelectedSearch();
     document.getElementById('inputFieldStartID').value = '';
@@ -125,8 +131,8 @@ function startView() {
     buttonsRef.innerHTML = '';
     names = [];
     offset = 0;
-    limit = 30;       
-    BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit="+limit+"&offset="+offset;
+    limit = 30;
+    BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" + offset;
     init();
 }
 

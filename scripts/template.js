@@ -29,7 +29,8 @@ function overlayPictureRenderingMain(index) {
                                 <div onclick="logDownWBubblingPrevention(event)" class="card2">
                                     <header class="cardHeader2">
                                         <div>${names[index].id}</div>
-                                        <div>${names[index].name}</div>                                        
+                                        <div>${names[index].name}</div>     
+                                        <button type="button" class="btn-close btn-close-white" aria-label="Close" onclick="closeOverlay()"></button>                                   
                                     </header>
                                     <figure class="cardImage2 ${names[index].types[0].type.name}">
                                         <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
@@ -70,7 +71,8 @@ function overlayPictureRenderingStats(index) {
                                 <div onclick="logDownWBubblingPrevention(event)" class="card2">
                                     <header class="cardHeader2">
                                         <div>${names[index].id}</div>
-                                        <div>${names[index].name}</div>                                        
+                                        <div>${names[index].name}</div>   
+                                        <button type="button" class="btn-close btn-close-white" aria-label="Close" onclick="closeOverlay()"></button>                                     
                                     </header>
                                     <figure class="cardImage2 ${names[index].types[0].type.name}">
                                         <img src="${names[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">

@@ -10,10 +10,12 @@ function search() {
 }
 
 function renderSearching() {
+    buttonsRef.innerHTML= '';
     for (let index = 0; index < gefiltertesArray.length; index++) {
         cardsRef.innerHTML = '';        
         renderSearch(index);
     }
+    buttonsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="startView()">Startseite laden</button>`;
 }
 
 function renderSearch(index) {

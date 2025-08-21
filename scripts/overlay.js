@@ -6,8 +6,7 @@ let displayFooter = document.getElementById('footer');
 function openOverlay(index) { // render the Overlay picture
     overlayPictureRenderingMain(index);
     renderIconsCardsMain(index);
-    toggleOverlay(); // starting toggle function
-    //displayAOT.classList.add("d_none"); // add AOT the class d_none, This hides the contents of the AOT
+    toggleOverlay(); // starting toggle function    
 }
 
 function toggleOverlay() {
@@ -28,7 +27,6 @@ function logDownWBubblingPrevention(event) {
 function openOverlaySearch(index) { // render the Overlay picture
     overlayPictureRenderingMainSearch(index);
     renderIconsCardsMainSearch(index);
-    toggleOverlay(); // starting toggle function
-    //displayAOT.classList.add("d_none"); // add AOT the class d_none, This hides the contents of the AOT    
+    toggleOverlay(); // starting toggle function  
 }
 
