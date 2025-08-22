@@ -47,7 +47,7 @@ async function render(index) {
         cardsRef.innerHTML += cardsRendering(index);
         renderIconsSmallCards(index);
     }
-    buttonsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="moreCards()">weitere Karten Laden</button>`;
+    buttonsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="moreCards()">more cards loading</button>`;
 }
 
 // render the icons for the small cards
@@ -123,7 +123,7 @@ async function renderForSelectedSearch(index) {
         cardsRef.innerHTML += cardsRendering(index);
         renderIconsSmallCards(index);
     }
-    buttonsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="startView()">Startseite laden</button>`;
+    buttonsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="startView()">Start Page loading</button>`;
 }
 
 // button for loading standart page 

@@ -31,13 +31,14 @@
 
 /* ######################################################## */
 .main {
-    /* entire width area without header footer */
     background-color: var(--backgroundColorAOT);
+    min-height: calc(100vh - 200px);
+    width: 100%;
 }
 
 .content {
-    /* area without header foooter */
-    width: calc(100%-300px);
+    max-width: var(--maxWidth);
+    width: 100%;
     min-height: calc(100vh - 276px);
     display: flex;
     justify-content: center;
