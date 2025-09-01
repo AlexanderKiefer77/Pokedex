@@ -1,48 +1,48 @@
 
-// start-variables for loading the index page
-let offset = 0;
-let limit = 30;
-
-// adresse von pokemon API 
-let BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" + offset;
-
+let BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
+let limitStart = 30; // for the first 30 cards to load for starting image
 let names = [];
 let responseAsJson = [];
+let responseAsJsonTwo = [];
 let cardsRef = document.getElementById('smallCardsPlace');
 let buttonsRef = document.getElementById('buttonsPlace');
+let eingabe;
 
 async function init() {
     await usePromise();
-    render();
 }
 
 async function usePromise() {
     try {
-        //console.log("Abfrage gestartet");
         await fetchDataJson();
-        //console.log('Abfrage beendet');
     } catch (error) {
         console.error('Fehler beim Abrufen der Daten:', error);
         alert("Es gibt Probleme mit Ihrer Internet Verbindung");
     }
-    stopLoadingSpinner();
 }
 
+// load all url in the array responseAsJson
 async function fetchDataJson(path = "") {
     startLoadingSpinner();
     let response = await fetch(BASE_URL + path + ".json");
     responseAsJson = await response.json();
+    loadingCards();
+}
 
-    for (let i = 0; i < responseAsJson.results.length; i++) {
+async function loadingCards() {
+    startLoadingSpinner();
+    for (let i = 0; i < limitStart; i++) {
         let element = await fetch(url = responseAsJson.results[i].url);
         let element2 = await element.json();
         names.push(element2);
     }
-    //console.log('Abfrage beendet');
+    stopLoadingSpinner();
+    render();
 }
 
 // render the small cards
 async function render(index) {
+    buttonsRef.innerHTML = '';
     for (let index = 0; index < names.length; index++) {
         cardsRef.innerHTML += cardsRendering(index);
         renderIconsSmallCards(index);
@@ -74,22 +74,24 @@ function renderIconsCardsStats(index) {
 }
 
 // for button More Cards Loading
-function moreCards() {
-    offset = names.length;
-    limit = 20;
-    BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" + offset;
-    buttonsRef.innerHTML = '';
-    init();
+async function moreCards() {
+    console.log("funktion more cards aufgerufen");
+    cardsRef.innerHTML = '';
+    names = [];
+    limitStart += 20;
+    loadingCards();
 }
 
 // for select start card and numbers of cards
 function startID() {
     let inputStartID = document.getElementById('inputFieldStartID').value;
     let inputFieldNumberCardsLoading = document.getElementById('inputFieldNumberCardsLoading').value;
-    if (inputStartID == "" || inputFieldNumberCardsLoading == "") {
+    if (inputStartID == "" || inputFieldNumberCardsLoading == "" ) {
         return;
     } else if (inputStartID < 0 || inputFieldNumberCardsLoading < 1) {
-        alert("Die Eingabe muss größer 0 sein !");
+        offset = 0;
+        inputFieldNumberCardsLoading = 30;
+        cardsLoading(offset, inputFieldNumberCardsLoading);
     } else if (inputFieldNumberCardsLoading > 20) {
         inputFieldNumberCardsLoading = 20;
         offset = inputStartID;
@@ -101,19 +103,45 @@ function startID() {
         offset = inputStartID - 1;
         cardsLoading(offset, inputFieldNumberCardsLoading);
     }
+    toggleRespMenuClose();
 }
 
 // loading selected small cards from input
 async function cardsLoading(offset, inputFieldNumberCardsLoading) {
-    //console.log("neu laden gestartet");    
-    cardsRef.innerHTML = '';
-    names = [];
+    gefiltertesArray = [];
     limit = inputFieldNumberCardsLoading;
     BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" + offset;
-    await usePromise();
-    renderForSelectedSearch();
+    await usePromiseTwo();
     document.getElementById('inputFieldStartID').value = '';
     document.getElementById('inputFieldNumberCardsLoading').value = '';
+}
+
+async function usePromiseTwo() {
+    try {
+        await fetchDataJsonTwo();
+    } catch (error) {
+        console.error('Fehler beim Abrufen der Daten:', error);
+        alert("Es gibt Probleme mit Ihrer Internet Verbindung");
+    }
+}
+
+async function fetchDataJsonTwo(path = "") {
+    let response = await fetch(BASE_URL + path + ".json");
+    responseAsJsonTwo = await response.json();
+    cardsRef.innerHTML = '';
+    loadingCardsTwoSelectedSearch();
+}
+
+async function loadingCardsTwoSelectedSearch() {
+    startLoadingSpinner();
+    for (let i = 0; i < responseAsJsonTwo.results.length; i++) {
+        let element10 = await fetch(url = responseAsJsonTwo.results[i].url);
+        let element20 = await element10.json();
+        gefiltertesArray.push(element20);
+    }
+    renderSearch();
+    buttonsRef.innerHTML = '';
+    buttonsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="startView()">Start Page loading</button>`;
 }
 
 // render the small cards with selected start and number of cards
@@ -128,12 +156,12 @@ async function renderForSelectedSearch(index) {
 
 // button for loading standart page 
 function startView() {
+    startLoadingSpinner();
+    cardsRef.innerHTML = '';
     buttonsRef.innerHTML = '';
-    names = [];
-    offset = 0;
-    limit = 30;
-    BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" + offset;
-    init();
+    document.getElementById('inputField').value = '';
+    stopLoadingSpinner();
+    render();
 }
 
 // for progress-bar

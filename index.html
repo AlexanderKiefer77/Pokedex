@@ -34,7 +34,7 @@
                 </div>
 
                 <button id="navObenButton" type="button" class="btn btn-secondary searchButton"
-                    onclick="checkWindowWidth()">Such-Menü</button>
+                    onclick="checkWindowWidth()">Search Menu</button>
             </section>
         </div>
     </header>
@@ -48,35 +48,35 @@
                 <nav class="navBarOwn">
                     <div class="selectionField">
                         <div class="firstCardSearchField">
-                            <label for="inputFieldStartID">Erste Karte</label>
+                            <label for="inputFieldStartID">First Card</label>
                             <input id="inputFieldStartID" class="form-control mr-sm-2 input" type="number" min="1"
                                 placeholder="..." required>
                         </div>
 
                         <div class="numberOfCardsSearchField">
-                            <label for="inputFieldNumberCardsLoading">Anzahl Karten</label>
+                            <label for="inputFieldNumberCardsLoading">Number of cards</label>
                             <input id="inputFieldNumberCardsLoading" class="form-control mr-sm-2 input" type="number"
-                                value="10" min="5" max="20" step="5" required>
+                                placeholder="max 20" min="1" max="20" required> <!--step="5"-->
                         </div>
 
                         <div>
                             <button tabindex="0" aria-label="Suche starten"
                                 class="searchFieldutton btn btn-outline-light my-2 my-sm-0"
-                                onclick="startID()">Suchen</button>
+                                onclick="startID()">Search</button>
                         </div>
                     </div>
 
                     <div class="searchField">
                         <div class="selectionFieldSearch form-inline">
-                            <input id="inputField" class="form-control mr-sm-2" type="search" placeholder="Suchbegriff"
+                            <input id="inputField" class="form-control mr-sm-2" type="search" placeholder="search term (min 3 letters)"
                                 aria-label="Search">
                             <button tabindex="0" aria-label="Suche starten" onclick="search()" class="btn btn-outline-light my-2 my-sm-0"
-                                type="submit">Suchen</button>
+                                type="submit">Search</button>
                         </div>
                     </div>
 
                     <button tabindex="0" aria-label="Menü schliessen" id="navObenButton" type="button"
-                        class="btn btn-secondary searchButton" onclick="toggleRespMenuClose()">Schliessen</button>
+                        class="btn btn-secondary searchButton" onclick="toggleRespMenuClose()">Close</button>
                 </nav>
             </div>
 

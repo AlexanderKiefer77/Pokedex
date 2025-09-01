@@ -9,7 +9,6 @@ function openOverlay(index) {
     renderIconsCardsMain(index);
     toggleOverlay();
     document.body.style.overflow = 'hidden';
-
 }
 
 function toggleOverlay() {
@@ -34,6 +33,7 @@ function openOverlaySearch(index) { // render the Overlay picture
     toggleOverlay(); // starting toggle function  
 }
 
+// ##################################################################################
 function prevCardMain(index) { // function backwards card main view
     if (index > 0) {
         index = index - 1;
@@ -86,3 +86,57 @@ function nextCardStats(index) { // function forwards card stats view
     }
 }
 
+// ##################################################################################
+// for search funktion 
+
+function prevCardMainSearch(index) { // function backwards card main view
+    if (index > 0) {
+        index = index - 1;
+        overlayPictureRenderingMainSearch(index);
+        renderIconsCardsMainSearch(index);       
+    } else if (index == 0) {
+        index = gefiltertesArray.length - 1;
+        overlayPictureRenderingMainSearch(index);
+        renderIconsCardsMainSearch(index);       
+    }
+}
+
+function nextCardMainSearch(index) { // function forwards card main view
+    if (index < gefiltertesArray.length - 1) {
+        index = index + 1;
+        overlayPictureRenderingMainSearch(index);
+        renderIconsCardsMainSearch(index);    
+    } else if (index = gefiltertesArray.length) {
+        index = 0;
+        overlayPictureRenderingMainSearch(index);
+        renderIconsCardsMainSearch(index);    
+    }
+}
+
+function prevCardStatsSearch(index) { // function backwards card stats view
+    if (index > 0) {
+        index = index - 1;
+        overlayPictureRenderingStatsSearch(index);
+        renderIconsCardsStatsSearch(index);      
+        updateProgressBar(index);
+    } else if (index == 0) {
+        index = gefiltertesArray.length - 1;
+        overlayPictureRenderingStatsSearch(index);
+        renderIconsCardsStatsSearch(index);      
+        updateProgressBar(index);
+    }
+}
+
+function nextCardStatsSearch(index) { // function forwards card stats view
+    if (index < gefiltertesArray.length - 1) {
+        index = index + 1;
+        overlayPictureRenderingStatsSearch(index);
+        renderIconsCardsStatsSearch(index);  
+        updateProgressBar(index); 
+    } else if (index = gefiltertesArray.length) {
+        index = 0;
+        overlayPictureRenderingStatsSearch(index);
+        renderIconsCardsStatsSearch(index);   
+        updateProgressBar(index); 
+    }
+}

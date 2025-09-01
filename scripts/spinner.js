@@ -11,7 +11,7 @@ function startLoadingSpinner() {
 
 function stopLoadingSpinner() {
     let spinnerRef = document.getElementById('spinnerPlace');
-    spinnerRef.classList.remove("loaderCircle");
+    //spinnerRef.classList.remove("loaderCircle");
     cardsRef.innerHTML = '';
     //console.log("spinner gestoppt");
 }

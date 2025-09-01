@@ -52,7 +52,7 @@ label {
 }
 
 .input {
-    width: 70px !important;
+    width: 90px !important;
 }
 
 .numberOfCardsSearchField {
@@ -87,7 +87,7 @@ label {
 }
 
 .searchButton {
-    width: 120px !important;
+    width: 140px !important;
     height: 40px !important;
     font-size: 20px !important;
 }
