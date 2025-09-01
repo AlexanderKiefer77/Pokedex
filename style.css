@@ -19,6 +19,10 @@
     height: 60px;
 }
 
+.name {
+    margin: 0;
+}
+
 .innerHeader {
     display: flex;
     justify-content: space-between;

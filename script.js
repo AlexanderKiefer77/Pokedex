@@ -65,6 +65,7 @@ function renderIconsCardsMain(index) {
         iconsRef.innerHTML += iconsRendering(index, j);
     }
 }
+
 // render the icons for the individual page stats
 function renderIconsCardsStats(index) {
     let iconsRefStats = document.getElementById(`iconFieldStats${index}`);
@@ -86,7 +87,7 @@ async function moreCards() {
 function startID() {
     let inputStartID = document.getElementById('inputFieldStartID').value;
     let inputFieldNumberCardsLoading = document.getElementById('inputFieldNumberCardsLoading').value;
-    if (inputStartID == "" || inputFieldNumberCardsLoading == "" ) {
+    if (inputStartID == "" || inputFieldNumberCardsLoading == "") {
         return;
     } else if (inputStartID < 0 || inputFieldNumberCardsLoading < 1) {
         offset = 0;
@@ -171,42 +172,5 @@ function updateProgressBar(index) {
         document.getElementById('progress-bar' + `${k}`).innerHTML = `${percent}`; // write the percent value in the "progress-bar"
         document.getElementById('progress-bar' + `${k}`).style = `width: ${percent}%;`; // write the percent value in width from the "progress-bar"
     }
-}
-
-// for responsive navbar
-function checkWindowWidth() {
-    if (window.innerWidth > 900) {
-        toggleRespMenuOpenMore900();
-    } else if (window.innerWidth > 500 && window.innerWidth <= 900) {
-        toggleRespMenuOpenBetween500and900();
-    } else {
-        toggleRespMenuOpenLess500();
-    }
-}
-
-// screen width more as 900px
-function toggleRespMenuOpenMore900() {
-    document.getElementById('respMenu').classList.toggle('respMenuClosed');
-}
-
-// screen width between 500px and 900px
-function toggleRespMenuOpenBetween500and900() {
-    document.getElementById('header').style.height = "245px";
-    document.getElementById('respMenu').style.top = "-245px";
-    document.getElementById('respMenu').classList.toggle('respMenuClosed');
-}
-
-// screen width less 500px
-function toggleRespMenuOpenLess500() {
-    document.getElementById('header').style.height = "365px";
-    document.getElementById('respMenu').style.top = "-365px";
-    document.getElementById('respMenu').classList.toggle('respMenuClosed');
-}
-
-//navbar close
-function toggleRespMenuClose() {
-    document.getElementById('header').style.height = "100px";
-    document.getElementById('respMenu').style.top = "-100px";
-    document.getElementById('respMenu').classList.toggle('respMenuClosed');
 }
 

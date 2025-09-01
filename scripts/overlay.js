@@ -140,3 +140,4 @@ function nextCardStatsSearch(index) { // function forwards card stats view
         updateProgressBar(index); 
     }
 }
+

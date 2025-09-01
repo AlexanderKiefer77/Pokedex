@@ -2,30 +2,33 @@
 let gefiltertesArray = [];
 let myArray = [];
 
-
 // function for search from input search term field
 async function search() {
-    startLoadingSpinner();
     eingabe = document.getElementById('inputField').value;
     if (eingabe.length >= 3) {
-        const filteredData = responseAsJson.results.filter(item => item.name.includes(eingabe));
-        gefiltertesArray = [];
-        for (let i = 0; i < filteredData.length; i++) {
-            let elementSearch = await fetch(url = filteredData[i].url);       
-            let elementSearch2 = await elementSearch.json();
-            gefiltertesArray.push(elementSearch2);
-        }
-        stopLoadingSpinner();
-        renderSearching();
+        startLoadingSpinner();
+        loadingSearchCards();       
     } else {
-        console.log("zu kurz"); /////////////////////////////////////
-        stopLoadingSpinner();
+        return;
     }
     toggleRespMenuClose();
 }
 
+// function for cards loading from search term input
+async function loadingSearchCards() {
+    const filteredData = responseAsJson.results.filter(item => item.name.includes(eingabe));
+    gefiltertesArray = [];
+    for (let i = 0; i < filteredData.length; i++) {
+        let elementSearch = await fetch(url = filteredData[i].url);
+        let elementSearch2 = await elementSearch.json();
+        gefiltertesArray.push(elementSearch2);
+    }
+    stopLoadingSpinner();
+    renderSearching();
+}
+
 // function for search from input search term field
-function renderSearching() {    
+function renderSearching() {
     buttonsRef.innerHTML = '';
     for (let index = 0; index < gefiltertesArray.length; index++) {
         cardsRef.innerHTML = '';

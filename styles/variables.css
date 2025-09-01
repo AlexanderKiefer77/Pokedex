@@ -5,10 +5,10 @@
 
     /* Variables for colors */    
     --backgroundColorHeader: #2486c7;
-    --backgroundColorAOT: #304502;
+    --backgroundColorAOT: #0c0c0c;
     --backgroundColorFooter: #002c03;
     --borderColorHeaderFooter: rgba(114, 87, 87, 0.477);
-    --backgroundColorOverlav: #304502;
+    /*--backgroundColorOverlav: #ade82f;*/
 
     /* Cards */
     --backgroundColorHeaderFooterCards: #1d4858;

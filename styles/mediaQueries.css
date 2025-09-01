@@ -8,17 +8,9 @@
         z-index: 5;
         justify-content: center;
     }
-
-    .navBarOwn {
-        padding-right: 24px;
-        width: 100%;
-        justify-content: space-between;
-        padding-left: 50px;
-        padding-right: 50px;
-    }
 }
 
-@media(max-width: 900px) {
+@media(max-width: 1100px) {
     .respMenuBox {
         height: 240px;
         padding-bottom: 20px;
@@ -32,18 +24,33 @@
         padding-right: 0;
     }
 
+    .selectionFieldInline {
+        max-width: 560px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .selectionField {
+        margin-left: 16px;
+        margin-right: 16px;
         max-width: 460px;
         width: 100%;
     }
 
     .searchField {
-        max-width: 460px;
+        max-width: 560px;
         width: 100%;
+        display: flex;
+        justify-content: center;
     }
     
     .selectionFieldSearch {
-        max-width: 480px;
+        margin-left: 16px;
+        margin-right: 16px;
+        max-width: 460px;
+        width: 100%;
     }
 
     .innerHeader {
@@ -89,13 +96,10 @@
         height: 200px;
         align-items: center;
         justify-content: center;
-        max-width: 280px;
-        width: 100%;
     }
 
-     .searchField {
-        max-width: 280px;
-        width: 100%;
+    label {
+        width: 130px;
     }
 }
 
