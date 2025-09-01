@@ -27,10 +27,12 @@ function logDownWBubblingPrevention(event) {
     event.stopPropagation();
 }
 
-function openOverlaySearch(index) { // render the Overlay picture
+// render the Overlay picture
+function openOverlaySearch(index) {
     overlayPictureRenderingMainSearch(index);
     renderIconsCardsMainSearch(index);
-    toggleOverlay(); // starting toggle function  
+    toggleOverlay();
+    document.body.style.overflow = 'hidden';
 }
 
 // ##################################################################################
