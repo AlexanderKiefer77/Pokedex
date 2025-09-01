@@ -2,7 +2,7 @@
 /* ######################################################## */
 .header {
     height: 100px;
-    background-color: var(--backgroundColorHeader);
+    background-color: var(--backgroundColorHeaderDay);
     display: flex;
     border-bottom: solid;
     border-color: var(--borderColorHeaderFooter);
@@ -35,7 +35,7 @@
 
 /* ######################################################## */
 .main {
-    background-color: var(--backgroundColorAOT);
+    background-color: var(--backgroundColorMainDay);
     min-height: calc(100vh - 200px);
     width: 100%;
 }
@@ -61,7 +61,7 @@
 /* ######################################################## */
 .footer {
     height: 100px;
-    background-color: var(--backgroundColorFooter);
+    background-color: var(--backgroundColorFooterDay);
     display: flex;
     align-items: center;
     border-top: solid;

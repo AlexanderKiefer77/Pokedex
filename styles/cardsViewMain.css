@@ -1,6 +1,5 @@
 
 /* for cards View main & stats */ 
-
 .card2 {
     width: 320px;
     display: flex;
@@ -40,7 +39,6 @@
 }
 
 .cardHeader2 {
-    background-color: var(--backgroundColorHeaderFooterCards);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -82,7 +80,7 @@
 }
 
 .card2nav {
-    background-color: var(--backgroundColorHeaderFooterCards);
+    background-color: var(--backgroundColorMainCardsNav);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -103,7 +101,6 @@
 }
 
 .cardFooter2 {
-    background-color: var(--backgroundColorHeaderFooterCards);
     width: 320px;
     height: 180px;
     display: flex;
@@ -132,7 +129,7 @@
 
 .iconField {
     width: 320px;
-    background-color: rgb(70, 131, 180);
+    background-color: var(--backgroundColorMainCardsIconField);
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -6,8 +6,17 @@ let responseAsJson = [];
 let responseAsJsonTwo = [];
 let cardsRef = document.getElementById('smallCardsPlace');
 let buttonsRef = document.getElementById('buttonsPlace');
-let eingabe;
+let inputSearchTerm;
 
+
+// for dark mode button
+document.getElementById('theme-toggle').addEventListener('click', function () {
+    const body = document.body;
+    const currentMode = body.getAttribute('darkmode');
+    body.setAttribute('darkmode', currentMode === 'on' ? 'off' : 'on');
+});
+
+// body on load
 async function init() {
     await usePromise();
 }
@@ -18,6 +27,7 @@ async function usePromise() {
     } catch (error) {
         console.error('Fehler beim Abrufen der Daten:', error);
         alert("Es gibt Probleme mit Ihrer Internet Verbindung");
+        stopLoadingSpinner();
     }
 }
 

@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: space-between;
     z-index: 1;
+    border-radius: 50px;
 }
 
 .cards:hover {
@@ -43,7 +44,6 @@ figure {
 }
 
 .cardHeader {
-    background-color: var(--backgroundColorHeaderFooterCards);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -52,8 +52,8 @@ figure {
     height: 100px;
     font-size: 22px;
     font-weight: bold;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 .smallCardsName {
@@ -76,15 +76,15 @@ figure {
 }
 
 .cardFooter {
-    background-color: var(--backgroundColorHeaderFooterCards);
     width: 240px;
-    height: 80px;
+    height: 8cqh;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
     gap: 20px;
+    z-index: 3;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .moreCardsLoadingButton {

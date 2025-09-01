@@ -18,13 +18,14 @@
     <link rel="stylesheet" href="./styles/mediaQueries.css">
     <link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/spinner.css">
+    <link rel="stylesheet" href="./styles/darkmode.css">
 
     <script src="./scripts/template.js"></script>
     <script src="./scripts/overlay.js" defer></script>
     <script src="./scripts/mediaQueries.js"></script>
 </head>
 
-<body onload="init()">
+<body darkmode="off" onload="init()">
     <header id="header" class="header">
         <div class="contentWidth">
             <section class="innerHeader">
@@ -91,9 +92,12 @@
     <footer class="footer">
         <div class="contentWidth">
             <section class="innerFooter">
-                <div class="headerIMG">
-                    <img src="./assets/img/pokemon-favicon.png" alt="Pokemon Logo">Pokedex
-                </div>
+                <button id="theme-toggle" class="mode-toggle">
+                    <span>
+                        <img src="./assets/img/Sun.svg">
+                        <img src="./assets/img/Moon.svg">
+                    </span>
+                </button>
                 <a href="./impressum.html">Impressum</a>
             </section>
         </div>

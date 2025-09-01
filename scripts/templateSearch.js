@@ -9,10 +9,10 @@ function cardsRenderingSearch(index) {
                 <figure class="cardImage ${gefiltertesArray[index].types[0].type.name}">
                     <img src="${gefiltertesArray[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage">
                 </figure>
-                <footer>
+                <div>
                     <div id="iconField${index}" class="cardFooter">
                     </div>
-                </footer>
+                </div>
             </div>`
 }
 

@@ -4,8 +4,8 @@ let myArray = [];
 
 // function for search from input search term field
 async function search() {
-    eingabe = document.getElementById('inputField').value;
-    if (eingabe.length >= 3) {
+    inputSearchTerm = document.getElementById('inputField').value;
+    if (inputSearchTerm.length >= 3) {
         startLoadingSpinner();
         loadingSearchCards();       
     } else {
@@ -16,7 +16,7 @@ async function search() {
 
 // function for cards loading from search term input
 async function loadingSearchCards() {
-    const filteredData = responseAsJson.results.filter(item => item.name.includes(eingabe));
+    const filteredData = responseAsJson.results.filter(item => item.name.includes(inputSearchTerm));
     gefiltertesArray = [];
     for (let i = 0; i < filteredData.length; i++) {
         let elementSearch = await fetch(url = filteredData[i].url);
