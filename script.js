@@ -7,7 +7,8 @@ let responseAsJsonTwo = [];
 let cardsRef = document.getElementById('smallCardsPlace');
 let buttonsRef = document.getElementById('buttonsPlace');
 let inputSearchTerm;
-
+let inputStartID;
+let inputFieldNumberCardsLoading;
 
 // for dark mode button
 document.getElementById('theme-toggle').addEventListener('click', function () {
@@ -86,7 +87,6 @@ function renderIconsCardsStats(index) {
 
 // for button More Cards Loading
 async function moreCards() {
-    console.log("funktion more cards aufgerufen");
     cardsRef.innerHTML = '';
     names = [];
     limitStart += 20;
@@ -95,26 +95,40 @@ async function moreCards() {
 
 // for select start card and numbers of cards
 function startID() {
-    let inputStartID = document.getElementById('inputFieldStartID').value;
-    let inputFieldNumberCardsLoading = document.getElementById('inputFieldNumberCardsLoading').value;
-    if (inputStartID == "" || inputFieldNumberCardsLoading == "") {
+    firstPartStartID();
+    if (inputStartID == "" || inputStartID <= 0) {
+        firstCardError();
         return;
-    } else if (inputStartID < 0 || inputFieldNumberCardsLoading < 1) {
-        offset = 0;
-        inputFieldNumberCardsLoading = 30;
-        cardsLoading(offset, inputFieldNumberCardsLoading);
-    } else if (inputFieldNumberCardsLoading > 20) {
-        inputFieldNumberCardsLoading = 20;
-        offset = inputStartID;
-        cardsLoading(offset, inputFieldNumberCardsLoading);
-    } else if (inputStartID == 0) {
-        offset = inputStartID;
-        cardsLoading(offset, inputFieldNumberCardsLoading);
+    } else if (inputFieldNumberCardsLoading == "" || inputFieldNumberCardsLoading < 1 || inputFieldNumberCardsLoading > 20) {
+        numberOfCardsError();
+        return;
     } else if (inputStartID > 0) {
         offset = inputStartID - 1;
         cardsLoading(offset, inputFieldNumberCardsLoading);
-    }
+    } 
     toggleRespMenuClose();
+}
+
+// for function "startID" first part
+function firstPartStartID() {
+    document.getElementById('inputFieldStartID').style.backgroundColor = 'white';
+    document.getElementById('inputFieldStartID').style.fontWeight = '';
+    document.getElementById('inputFieldNumberCardsLoading').style.backgroundColor = 'white';
+    document.getElementById('inputFieldNumberCardsLoading').style.fontWeight = '';
+    inputStartID = document.getElementById('inputFieldStartID').value;
+    inputFieldNumberCardsLoading = document.getElementById('inputFieldNumberCardsLoading').value;
+}
+
+// for function "startID" if query First Card
+function firstCardError() {
+    document.getElementById('inputFieldStartID').style.backgroundColor = 'red';
+    document.getElementById('inputFieldStartID').value = '';
+}
+
+// for function "startID" if query Number of Cards
+function numberOfCardsError() {
+    document.getElementById('inputFieldNumberCardsLoading').style.backgroundColor = 'red';
+    document.getElementById('inputFieldNumberCardsLoading').value = '';
 }
 
 // loading selected small cards from input

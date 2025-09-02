@@ -33,6 +33,9 @@ function toggleRespMenuOpenLess500() {
 function toggleRespMenuClose() {
     document.getElementById('header').style.height = "100px";
     document.getElementById('respMenu').style.top = "-100px";
-    document.getElementById('respMenu').classList.toggle('respMenuClosed');
+    document.getElementById('respMenu').classList.toggle('respMenuClosed');    
+    document.getElementById('inputFieldStartID').value = '';
+    document.getElementById('inputFieldNumberCardsLoading').value = '';
+    firstPartStartID();
 }
 
