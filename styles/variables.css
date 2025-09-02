@@ -9,11 +9,12 @@
     --backgroundColorMainDay: #a1a17d;
     --backgroundColorMainDark: #0c0c0c;
     --backgroundColorFooterDay: #8d4214;
-    --backgroundColorFooterDark: #0b450f;
-    --borderColorHeaderFooter: rgba(114, 87, 87, 0.477);
+    --backgroundColorFooterDark: #0b450f;    
     --backgroundColorMainCardsNav: #66176f;
     --backgroundColorMainCardsIconField: #1c262e;
     --backgroundColorCardsFooterDay: #8d4214;
     --backgroundColorCardsFooterDark: #0b450f;
+    --borderColorHeaderFooter: #7257577a;
+    --colorProgressBar: #3cbc89;
 }
 

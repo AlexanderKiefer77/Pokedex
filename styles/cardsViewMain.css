@@ -1,7 +1,7 @@
 
 /* for cards View main & stats */ 
 .card2 {
-    width: 320px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +43,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 320px;
+    width: 300px;
     height: 80px;
     gap: 20px;
     font-size: 22px;
@@ -59,7 +59,7 @@
 }
 
 .cardImage2 {
-    width: 320px;
+    width: 300px;
     height: 180px;
     display: flex;
     justify-content: center;
@@ -85,7 +85,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    width: 320px;
+    width: 300px;
     height: 40px;
 }
 
@@ -101,7 +101,7 @@
 }
 
 .cardFooter2 {
-    width: 320px;
+    width: 300px;
     height: 180px;
     display: flex;
     justify-content: flex-start;
@@ -114,21 +114,21 @@
 }
 
 .tableFirstRow {
-    padding-right: 20px;
+    padding-right: 12px;
 }
 
 .tableSecondRow {
-    width: 170px;
+    width: 160px;
 }
 
 .progress-bar {
-    background-color: rgb(60, 188, 137) !important;
+    background-color: var(--colorProgressBar) !important;
     color: black !important;
     font-weight: bold;
 }
 
 .iconField {
-    width: 320px;
+    width: 300px;
     background-color: var(--backgroundColorMainCardsIconField);
     display: flex;
     flex-direction: row;
