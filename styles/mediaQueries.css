@@ -101,5 +101,10 @@
     label {
         width: 130px;
     }
+
+    .overlayClass {
+        top: 0;
+        height: 100%;
+    }
 }
 

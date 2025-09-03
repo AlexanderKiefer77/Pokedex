@@ -1,6 +1,6 @@
 
 let BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
-let limitStart = 30; // for the first 30 cards to load for starting image
+let limitStart = 20; // for the first 30 cards to load for starting image
 let names = [];
 let responseAsJson = [];
 let responseAsJsonTwo = [];
@@ -87,10 +87,24 @@ function renderIconsCardsStats(index) {
 
 // for button More Cards Loading
 async function moreCards() {
-    cardsRef.innerHTML = '';
-    names = [];
-    limitStart += 20;
-    loadingCards();
+    startLoadingSpinner();
+    let mehrKarten = names.length + limitStart;
+    for (let i = names.length; i < mehrKarten; i++) {
+        let element = await fetch(url = responseAsJson.results[i].url);
+        let element2 = await element.json();
+        names.push(element2);
+    }
+    stopLoadingSpinner();
+    moreCardsPartTwo();
+}
+
+function moreCardsPartTwo() {
+    buttonsRef.innerHTML = '';
+    for (let index = 0; index < names.length; index++) {
+        cardsRef.innerHTML += cardsRendering(index);
+        renderIconsSmallCards(index);
+    }
+    buttonsRef.innerHTML += `<button type="button" class="btn btn-warning btn-lg moreCardsLoadingButton" onclick="moreCards()">more cards loading</button>`;
 }
 
 // for select start card and numbers of cards
@@ -105,7 +119,7 @@ function startID() {
     } else if (inputStartID > 0) {
         offset = inputStartID - 1;
         cardsLoading(offset, inputFieldNumberCardsLoading);
-    } 
+    }
     toggleRespMenuClose();
 }
 
