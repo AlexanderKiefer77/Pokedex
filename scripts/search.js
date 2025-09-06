@@ -1,5 +1,5 @@
 
-let gefiltertesArray = [];
+let filteredArray = [];
 let myArray = [];
 
 // function for search from input search term field
@@ -7,7 +7,7 @@ async function search() {
     inputSearchTerm = document.getElementById('inputField').value;
     if (inputSearchTerm.length >= 3) {
         startLoadingSpinner();
-        loadingSearchCards();       
+        loadingSearchCards();
     } else {
         return;
     }
@@ -17,11 +17,12 @@ async function search() {
 // function for cards loading from search term input
 async function loadingSearchCards() {
     const filteredData = responseAsJson.results.filter(item => item.name.includes(inputSearchTerm));
-    gefiltertesArray = [];
+    filteredArray = [];
     for (let i = 0; i < filteredData.length; i++) {
-        let elementSearch = await fetch(url = filteredData[i].url);
-        let elementSearch2 = await elementSearch.json();
-        gefiltertesArray.push(elementSearch2);
+        const url = filteredData[i].url;
+        let responseSearch = await fetch(url);
+        let responseAsJsonSearch = await responseSearch.json();
+        filteredArray.push(responseAsJsonSearch);
     }
     stopLoadingSpinner();
     renderSearching();
@@ -30,7 +31,7 @@ async function loadingSearchCards() {
 // function for search from input search term field
 function renderSearching() {
     buttonsRef.innerHTML = '';
-    for (let index = 0; index < gefiltertesArray.length; index++) {
+    for (let index = 0; index < filteredArray.length; index++) {
         cardsRef.innerHTML = '';
         renderSearch(index);
     }
@@ -39,7 +40,7 @@ function renderSearching() {
 
 function renderSearch(index) {
     cardsRef.innerHTML = '';
-    for (let index = 0; index < gefiltertesArray.length; index++) {
+    for (let index = 0; index < filteredArray.length; index++) {
         cardsRef.innerHTML += cardsRenderingSearch(index);
         renderIconsSmallCardsSearch(index);
     }
@@ -48,7 +49,7 @@ function renderSearch(index) {
 // render the icons for the small cards
 function renderIconsSmallCardsSearch(index) {
     let iconsRef = document.getElementById(`iconField${index}`);
-    for (let k = 0; k < gefiltertesArray[index].types.length; k++) {
+    for (let k = 0; k < filteredArray[index].types.length; k++) {
         iconsRef.innerHTML += iconsRenderingSearch(index, k);
     }
 }
@@ -56,7 +57,7 @@ function renderIconsSmallCardsSearch(index) {
 // render the icons for the small cards
 function renderIconsSmallCardsSearch(index) {
     let iconsRef = document.getElementById(`iconField${index}`);
-    for (let j = 0; j < gefiltertesArray[index].types.length; j++) {
+    for (let j = 0; j < filteredArray[index].types.length; j++) {
         iconsRef.innerHTML += iconsRenderingSearch(index, j);
     }
 }
@@ -64,7 +65,7 @@ function renderIconsSmallCardsSearch(index) {
 // render the icons for the individual page main
 function renderIconsCardsMainSearch(index) {
     let iconsRef = document.getElementById(`iconFieldMain${index}`);
-    for (let j = 0; j < gefiltertesArray[index].types.length; j++) {
+    for (let j = 0; j < filteredArray[index].types.length; j++) {
         iconsRef.innerHTML += iconsRenderingSearch(index, j);
     }
 }
@@ -72,7 +73,7 @@ function renderIconsCardsMainSearch(index) {
 // render the icons for the individual page stats
 function renderIconsCardsStatsSearch(index) {
     let iconsRefStats = document.getElementById(`iconFieldStats${index}`);
-    for (let j = 0; j < gefiltertesArray[index].types.length; j++) {
+    for (let j = 0; j < filteredArray[index].types.length; j++) {
         iconsRefStats.innerHTML += iconsRenderingSearch(index, j);
     }
 }

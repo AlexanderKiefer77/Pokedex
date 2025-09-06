@@ -97,18 +97,18 @@ function prevCardMainSearch(index) { // function backwards card main view
         overlayPictureRenderingMainSearch(index);
         renderIconsCardsMainSearch(index);       
     } else if (index == 0) {
-        index = gefiltertesArray.length - 1;
+        index = filteredArray.length - 1;
         overlayPictureRenderingMainSearch(index);
         renderIconsCardsMainSearch(index);       
     }
 }
 
 function nextCardMainSearch(index) { // function forwards card main view
-    if (index < gefiltertesArray.length - 1) {
+    if (index < filteredArray.length - 1) {
         index = index + 1;
         overlayPictureRenderingMainSearch(index);
         renderIconsCardsMainSearch(index);    
-    } else if (index = gefiltertesArray.length) {
+    } else if (index = filteredArray.length) {
         index = 0;
         overlayPictureRenderingMainSearch(index);
         renderIconsCardsMainSearch(index);    
@@ -122,7 +122,7 @@ function prevCardStatsSearch(index) { // function backwards card stats view
         renderIconsCardsStatsSearch(index);      
         updateProgressBar(index);
     } else if (index == 0) {
-        index = gefiltertesArray.length - 1;
+        index = filteredArray.length - 1;
         overlayPictureRenderingStatsSearch(index);
         renderIconsCardsStatsSearch(index);      
         updateProgressBar(index);
@@ -130,12 +130,12 @@ function prevCardStatsSearch(index) { // function backwards card stats view
 }
 
 function nextCardStatsSearch(index) { // function forwards card stats view
-    if (index < gefiltertesArray.length - 1) {
+    if (index < filteredArray.length - 1) {
         index = index + 1;
         overlayPictureRenderingStatsSearch(index);
         renderIconsCardsStatsSearch(index);  
         updateProgressBar(index); 
-    } else if (index = gefiltertesArray.length) {
+    } else if (index = filteredArray.length) {
         index = 0;
         overlayPictureRenderingStatsSearch(index);
         renderIconsCardsStatsSearch(index);   

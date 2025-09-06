@@ -3,11 +3,11 @@
 function cardsRenderingSearch(index) {
     return `<div class="cards" onclick="openOverlaySearch(${index})">
                 <header class="cardHeader">
-                    <div>${gefiltertesArray[index].id}</div>
-                    <div class="smallCardsName">${gefiltertesArray[index].name}</div>
+                    <div>${filteredArray[index].id}</div>
+                    <div class="smallCardsName">${filteredArray[index].name}</div>
                 </header>
-                <figure class="cardImage ${gefiltertesArray[index].types[0].type.name}">
-                    <img src="${gefiltertesArray[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage">
+                <figure class="cardImage ${filteredArray[index].types[0].type.name}">
+                    <img src="${filteredArray[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage">
                 </figure>
                 <div>
                     <div id="iconField${index}" class="cardFooter">
@@ -18,8 +18,8 @@ function cardsRenderingSearch(index) {
 
 // searching function - rendering the icons, used from rendering small cards, main page and stats page
 function iconsRenderingSearch(index, k) {
-    return `<figure class="typesIconsBG ${gefiltertesArray[index].types[k].type.name}">
-                <img src="./assets/typesIcons/${gefiltertesArray[index].types[k].type.name}.svg" class="typesIconsIMG">
+    return `<figure class="typesIconsBG ${filteredArray[index].types[k].type.name}">
+                <img src="./assets/typesIcons/${filteredArray[index].types[k].type.name}.svg" class="typesIconsIMG">
             </figure>`
 }
 
@@ -28,12 +28,12 @@ function overlayPictureRenderingMainSearch(index) {
     overlayRef.innerHTML = `<div class="innerOverlay">
                                 <div onclick="logDownWBubblingPrevention(event)" class="card2">
                                     <header class="cardHeader2">
-                                        <div>${gefiltertesArray[index].id}</div>
-                                        <div>${gefiltertesArray[index].name}</div>
+                                        <div>${filteredArray[index].id}</div>
+                                        <div>${filteredArray[index].name}</div>
                                         <button type="button" class="btn-close btn-close-white" aria-label="Close" onclick="closeOverlay()"></button>                                    
                                     </header>
-                                    <figure class="cardImage2 ${gefiltertesArray[index].types[0].type.name}">
-                                        <img src="${gefiltertesArray[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
+                                    <figure class="cardImage2 ${filteredArray[index].types[0].type.name}">
+                                        <img src="${filteredArray[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
                                     </figure>
                                     <section class="iconField">
                                         <svg onclick="prevCardMainSearch(${index})" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
@@ -52,19 +52,19 @@ function overlayPictureRenderingMainSearch(index) {
                                         <table>
                                             <tr>
                                                 <td class="tableFirstRow">Height :</td>
-                                                <td>${gefiltertesArray[index].height}</td>
+                                                <td>${filteredArray[index].height}</td>
                                             </tr>
                                             <tr>
                                                 <td class="tableFirstRow">Weight :</td>
-                                                <td>${gefiltertesArray[index].weight}</td>
+                                                <td>${filteredArray[index].weight}</td>
                                             </tr>
                                             <tr>
                                                 <td class="tableFirstRow">Base Experience :</td>
-                                                <td>${gefiltertesArray[index].base_experience}</td>
+                                                <td>${filteredArray[index].base_experience}</td>
                                             </tr>
                                             <tr>
                                                 <td class="tableFirstRow">Abilities :</td>
-                                                <td>${gefiltertesArray[index].abilities[0].ability.name}</td>
+                                                <td>${filteredArray[index].abilities[0].ability.name}</td>
                                             </tr>
                                         </table>
                                     </footer>
@@ -78,12 +78,12 @@ function overlayPictureRenderingStatsSearch(index) {
     overlayRef.innerHTML = `<div class="innerOverlay">
                                 <div onclick="logDownWBubblingPrevention(event)" class="card2">
                                     <header class="cardHeader2">
-                                        <div>${gefiltertesArray[index].id}</div>
-                                        <div>${gefiltertesArray[index].name}</div>
+                                        <div>${filteredArray[index].id}</div>
+                                        <div>${filteredArray[index].name}</div>
                                         <button type="button" class="btn-close btn-close-white" aria-label="Close" onclick="closeOverlay()"></button>
                                     </header>
-                                    <figure class="cardImage2 ${gefiltertesArray[index].types[0].type.name}">
-                                        <img src="${gefiltertesArray[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
+                                    <figure class="cardImage2 ${filteredArray[index].types[0].type.name}">
+                                        <img src="${filteredArray[index].sprites.other["home"].front_default}" alt="Pokemon Image" class="pkmImage2">
                                     </figure>
                                     <section class="iconField">
                                         <svg onclick="prevCardStatsSearch(${index})" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
@@ -101,7 +101,7 @@ function overlayPictureRenderingStatsSearch(index) {
                                     <footer class="cardFooter2">
                                         <table>
                                             <tr>
-                                                <td class="tableFirstRow">${gefiltertesArray[index].stats[0].stat.name + " :"}</td>
+                                                <td class="tableFirstRow">${filteredArray[index].stats[0].stat.name + " :"}</td>
                                                 <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                         <div id="progress-bar0" class="progress-bar" style="width: 0%"></div>
@@ -110,7 +110,7 @@ function overlayPictureRenderingStatsSearch(index) {
                                                 </td>                                
                                             </tr>
                                             <tr>
-                                                <td class="tableFirstRow">${gefiltertesArray[index].stats[1].stat.name + " :"}</td>
+                                                <td class="tableFirstRow">${filteredArray[index].stats[1].stat.name + " :"}</td>
                                                 <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                         <div id="progress-bar1" class="progress-bar" style="width: 0%"></div>
@@ -118,7 +118,7 @@ function overlayPictureRenderingStatsSearch(index) {
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="tableFirstRow">${gefiltertesArray[index].stats[2].stat.name + " :"}</td>
+                                                <td class="tableFirstRow">${filteredArray[index].stats[2].stat.name + " :"}</td>
                                                 <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                         <div id="progress-bar2" class="progress-bar" style="width: 0%"></div>
@@ -126,7 +126,7 @@ function overlayPictureRenderingStatsSearch(index) {
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="tableFirstRow">${gefiltertesArray[index].stats[3].stat.name + " :"}</td>
+                                                <td class="tableFirstRow">${filteredArray[index].stats[3].stat.name + " :"}</td>
                                                 <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                         <div id="progress-bar3" class="progress-bar" style="width: 0%"></div>
@@ -134,7 +134,7 @@ function overlayPictureRenderingStatsSearch(index) {
                                                 </td>
                                             </tr>
                                              <tr>
-                                                <td class="tableFirstRow">${gefiltertesArray[index].stats[4].stat.name + " :"}</td>
+                                                <td class="tableFirstRow">${filteredArray[index].stats[4].stat.name + " :"}</td>
                                                 <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                         <div id="progress-bar4" class="progress-bar" style="width: 0%"></div>
@@ -142,7 +142,7 @@ function overlayPictureRenderingStatsSearch(index) {
                                                 </td>
                                             </tr>
                                              <tr>
-                                                <td class="tableFirstRow">${gefiltertesArray[index].stats[5].stat.name + " :"}</td>
+                                                <td class="tableFirstRow">${filteredArray[index].stats[5].stat.name + " :"}</td>
                                                 <td class="tableSecondRow"> <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
                                                     aria-valuemax="100">
                                                         <div id="progress-bar5" class="progress-bar" style="width: 0%"></div>

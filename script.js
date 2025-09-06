@@ -1,9 +1,9 @@
 
-let BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
-let limitStart = 20; // for the first 30 cards to load for starting image
+const BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
+let limitStart = 30; // for the first 30 cards to load for starting image
 let names = [];
 let responseAsJson = [];
-let responseAsJsonTwo = [];
+let responseAsJsonSearch = [];
 let cardsRef = document.getElementById('smallCardsPlace');
 let buttonsRef = document.getElementById('buttonsPlace');
 let inputSearchTerm;
@@ -43,9 +43,10 @@ async function fetchDataJson(path = "") {
 async function loadingCards() {
     startLoadingSpinner();
     for (let i = 0; i < limitStart; i++) {
-        let element = await fetch(url = responseAsJson.results[i].url);
-        let element2 = await element.json();
-        names.push(element2);
+        const url = responseAsJson.results[i].url;
+        let responseLoadingCards = await fetch(url);
+        let responseAsJsonLoadingCards = await responseLoadingCards.json();
+        names.push(responseAsJsonLoadingCards);
     }
     stopLoadingSpinner();
     render();
@@ -88,11 +89,12 @@ function renderIconsCardsStats(index) {
 // for button More Cards Loading
 async function moreCards() {
     startLoadingSpinner();
-    let mehrKarten = names.length + limitStart;
-    for (let i = names.length; i < mehrKarten; i++) {
-        let element = await fetch(url = responseAsJson.results[i].url);
-        let element2 = await element.json();
-        names.push(element2);
+    let moreCards = names.length + limitStart;
+    for (let i = names.length; i < moreCards; i++) {
+        const url = responseAsJson.results[i].url;
+        let responseMoreCards = await fetch(url);
+        let responseAsJsonMoreCards = await responseMoreCards.json();
+        names.push(responseAsJsonMoreCards);
     }
     stopLoadingSpinner();
     moreCardsPartTwo();
@@ -123,6 +125,11 @@ function startID() {
     toggleRespMenuClose();
 }
 
+// for clear the selected fields after wrong input
+function fieldClear() {
+    firstPartStartID();
+}
+
 // for function "startID" first part
 function firstPartStartID() {
     document.getElementById('inputFieldStartID').style.backgroundColor = 'white';
@@ -147,36 +154,37 @@ function numberOfCardsError() {
 
 // loading selected small cards from input
 async function cardsLoading(offset, inputFieldNumberCardsLoading) {
-    gefiltertesArray = [];
+    filteredArray = [];
     limit = inputFieldNumberCardsLoading;
-    BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" + offset;
-    await usePromiseTwo();
+    BASE_URL_SelectedCards = "https://pokeapi.co/api/v2/pokemon?limit=" + limit + "&offset=" + offset;
+    await usePromiseSelectedCards();
     document.getElementById('inputFieldStartID').value = '';
     document.getElementById('inputFieldNumberCardsLoading').value = '';
 }
 
-async function usePromiseTwo() {
+async function usePromiseSelectedCards() {
     try {
-        await fetchDataJsonTwo();
+        await fetchDataJsonSelectedCards();
     } catch (error) {
         console.error('Fehler beim Abrufen der Daten:', error);
         alert("Es gibt Probleme mit Ihrer Internet Verbindung");
     }
 }
 
-async function fetchDataJsonTwo(path = "") {
-    let response = await fetch(BASE_URL + path + ".json");
-    responseAsJsonTwo = await response.json();
+async function fetchDataJsonSelectedCards(path = "") {
+    let response = await fetch(BASE_URL_SelectedCards + path + ".json");
+    responseAsJsonSearch = await response.json();
     cardsRef.innerHTML = '';
-    loadingCardsTwoSelectedSearch();
+    loadingCardsSelectedSearch();
 }
 
-async function loadingCardsTwoSelectedSearch() {
+async function loadingCardsSelectedSearch() {
     startLoadingSpinner();
-    for (let i = 0; i < responseAsJsonTwo.results.length; i++) {
-        let element10 = await fetch(url = responseAsJsonTwo.results[i].url);
-        let element20 = await element10.json();
-        gefiltertesArray.push(element20);
+    for (let i = 0; i < responseAsJsonSearch.results.length; i++) {
+        const url = responseAsJsonSearch.results[i].url;
+        let responseSelectedSearch = await fetch(url);
+        let responseAsJsonSelectedSearch = await responseSelectedSearch.json();
+        filteredArray.push(responseAsJsonSelectedSearch);
     }
     renderSearch();
     buttonsRef.innerHTML = '';
